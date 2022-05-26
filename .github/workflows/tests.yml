@@ -24,6 +24,10 @@ jobs:
       - run: npm install
 
       - run: npm run start:test&
+      
+      - run: npm add jest
+      
+      - run: npm install -g jest
 
       - run: jest
         env:

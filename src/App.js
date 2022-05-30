@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="App">
       <h2>Welcome to Seedle!</h2>
-      <Post />
+      <Location />
     </div>
   );
 };

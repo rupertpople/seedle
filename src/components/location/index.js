@@ -1,5 +1,5 @@
 import React from 'react';
-// import './index.css'
+import './index.css'
 
 const Location = ({postcode}) => {
   return (
@@ -12,18 +12,25 @@ const Location = ({postcode}) => {
           placeholder="Enter postcode here..."
           postcode="postcode"
         />
-        <span id="postcode-error">Please enter a valid postcode</span>
-        <button className="form-field" type="submit">
+        {/* <span id="postcode-error">Please enter a valid postcode</span> */}
+        <button className="submit" type="submit">
           Search
         </button>
       </form>
     </div>
+
+
+  
   );
 }
 
 export default Location;
 
-
-{/* <form action='sessions/new' method='GET'>
-<button class="botton" id="Login" type="submit" value="Log in"<>Log In</a></button>               
-</form>  */}
+{/* <div className="postcode-component">
+  <div className="location">
+    <form className="location-form">
+      <input type="text" placeholder="name"/>
+      <button>create</button>
+    </form>
+  </div>
+</div> */}

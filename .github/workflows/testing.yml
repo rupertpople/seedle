@@ -24,7 +24,3 @@ jobs:
       - run: npm install
 
       - run: npm run test
-
-      - run: jest
-        env:
-          CI: true

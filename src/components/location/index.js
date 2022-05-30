@@ -4,15 +4,22 @@ import React from 'react';
 const Location = ({postcode}) => {
   return (
     <div className="location">
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Postcode:
-        </label>
-        <input type="submit" value="Submit" />
+      <form className="location-form">
+        <input
+          id="postcode"
+          className="form-field"
+          type="text"
+          placeholder="Enter postcode here..."
+          postcode="postcode"
+        />
+        <span id="postcode-error">Please enter a valid postcode</span>
+        <button className="form-field" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
-};
+}
 
 export default Location;
 

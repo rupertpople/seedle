@@ -1,11 +1,14 @@
 import React from 'react';
 // import './index.css'
 
-const Post = ({name, species}) => {
+const Post = ({commonName, latinName, kingdom, family}) => {
   return (
     <div className="post">
-      <p className="post-name">{name}</p>
-      <p className="post-species">{species}</p>
+      <p className="post-commonName">{commonName}</p>
+      <p className="post-latinName">{latinName}</p>
+      <p className="post-kingdom">{kingdom}</p>
+      <p className="post-family">{family}</p>
+
     </div>
   );
 };

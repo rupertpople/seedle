@@ -3,6 +3,10 @@
 import React from 'react'
 import Location from './components/location';
 import Post from './components/post';
+import PlantModel from './model/plantModel';
+import PlantAPI from './model/plantAPI';
+
+const plants = new PlantModel(new PlantAPI('lat=51.4890&lon=-0.2122'));
 
 const App = () => {
   return (

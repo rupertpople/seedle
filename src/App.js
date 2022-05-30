@@ -1,11 +1,16 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from 'react'
+import BirdModel from './model/birdModel';
+import BirdAPI from './model/birdAPI';
 
+const birds = new BirdModel(new BirdAPI('lat=51.4890&lon=-0.2122'));
 
 function App() {
   return (
     <div className="App">
+      {console.log('10')}
+      {console.log (birds.getBirds())}
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
@@ -19,7 +24,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header>  
     </div>
   );
 }

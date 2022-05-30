@@ -4,7 +4,7 @@ class PlantAPI {
     }
 
     fetchBirds(query, callback, errorCallback) {
-        fetch(`https://records-ws.nbnatlas.org/explore/group/Plants?${this.location}&radius=5.0&start=0`)
+        fetch(`https://records-ws.nbnatlas.org/explore/group/Plants?${query}&radius=5.0&start=0`)
         .then((response) => response.json())
         .then((data) => {
             console.log("Load", data);

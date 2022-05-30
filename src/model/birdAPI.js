@@ -10,7 +10,7 @@ class BirdAPI {
         .then((response) => response.json())
         .then((data) => {
             console.log("Load", data);
-            callback(data.response.results);
+            callback(data);
         })
         .catch(() => {
             console.error("Error");

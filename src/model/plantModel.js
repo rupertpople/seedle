@@ -17,11 +17,19 @@ class PlantModel{
     }
 
     formatPlants(data){
-      this.plants = data
-    }
+        const plantsInfo = data.map(plant => ({ 
+            commonName: plant.commonName, latinName: plant.name, kingdom: plant.kingdom, family: plant.family }))
+        this.plantsInfo = plantsInfo
+        console.log('1')
+        console.log(this.plantsInfo)
+        }
 
     viewPlants(){
-      return this.plants
+      return this.plantsInfo
+    }
+
+    displayError(){
+        console.log('Request Failed')
     }
 }
 

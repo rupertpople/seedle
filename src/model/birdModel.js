@@ -17,11 +17,14 @@ class BirdModel{
     }
 
     formatBirds(data){
-      this.birds = data
-    }
+      const birdsInfo = data.map(bird => ({ 
+          commonName: bird.commonName, latinName: bird.name, kingdom: bird.kingdom, family: bird.family }))
+      this.birdsInfo = birdsInfo
+      }
+      
 
     viewBirds(){
-      return this.birds
+      return this.birdsInfo
     }
 
     displayError(){

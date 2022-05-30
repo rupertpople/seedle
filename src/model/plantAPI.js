@@ -1,14 +1,14 @@
 class PlantAPI {
-    constructor(lat, long) {
-        this.location = `lat=${lat}&lon=${long}`
+    constructor(geolocation) {
+        this.geolocation = geolocation
     }
 
-    fetchBirds(query, callback, errorCallback) {
-        fetch(`https://records-ws.nbnatlas.org/explore/group/Plants?${this.location}&radius=5.0&start=0`)
+    fetchPlants(query = this.geolocation, callback, errorCallback) {
+        fetch(`https://records-ws.nbnatlas.org/explore/group/Plants?${query}&radius=5.0&start=0`)
         .then((response) => response.json())
         .then((data) => {
             console.log("Load", data);
-            callback(data.response.results);
+            callback(data);
         })
         .catch(() => {
             console.error("Error");

@@ -7,18 +7,11 @@ class GeocodingAPI {
         this.postcode = postcode
     }
 
-    fetchGeolocation(query = this.postcode, callback, errorCallback) {
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${apiKey}`)
+    fetchGeolocation(query = this.postcode) {
+        console.log(query)
+        return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${apiKey}`)
         .then((response) => response.json())
-        .then((data) => {
-            console.log("Load", data);
-            callback(data.results);
-        })
-        .catch(() => {
-                console.error("Error");
-                errorCallback();
-              });
-        }
+    }
 }
 
    

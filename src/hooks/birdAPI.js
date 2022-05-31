@@ -9,7 +9,7 @@ const useBirds= () => {
     const fetchBirds= async () => {
         const birds= new BirdModel(new BirdAPI('lat=51.5074&lon=0.1278'))
         const res = await birds.getBirds();
-        setBirds(res.geolocation);
+        setBirds(res);
     }
 
     useEffect(() => {fetchBirds()}, []);

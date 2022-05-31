@@ -3,13 +3,15 @@ import { useEffect, useState } from 'react';
 import GeocodingAPI from "../model/geocodingAPI";
 import GeocodingModel from "../model/geocodingModel";
 
-const useGeolocation = () => {
+const useGeolocation = (postcode) => {
     const [geolocation, setGeolocation] = useState([]);
 
     const fetchGeolocation = async () => {
         const geocode = new GeocodingModel(new GeocodingAPI('w149ef'))
         const res = await geocode.getGeolocation();
-        setGeolocation(res.geolocation);
+        console.log('1')
+        console.log(res)
+        setGeolocation(res);
     }
 
     useEffect(() => {fetchGeolocation()}, []);

@@ -4,32 +4,15 @@ class BirdModel{
     }
 
     getBirds(query) {
-        this.birdAPI.fetchBirds(
-            query,
-            (data) => {
-              this.formatBirds(data);
-              this.viewBirds();
-            },
-            () => {
-              this.displayError();
-            }
-          );
-    }
+      return this.birdAPI.fetchBirds(query)
+      .then(data => this.formatBirds(data));
+      }
 
     formatBirds(data){
       const birdsInfo = data.map(bird => ({ 
           commonName: bird.commonName, latinName: bird.name, kingdom: bird.kingdom, family: bird.family }))
-      this.birdsInfo = birdsInfo
+      return [birdsInfo]
       }
-      
-
-    viewBirds(){
-      return this.birdsInfo
-    }
-
-    displayError(){
-        console.log('Request Failed')
-    }
 }
 
 export default BirdModel

@@ -1,36 +1,19 @@
 class PlantModel{
-    constructor(birdAPI){
-        this.birdAPI= birdAPI
+    constructor(plantAPI){
+        this.plantAPI= plantAPI
     }
 
     getPlants(query) {
-        this.birdAPI.fetchPlants(
-            query,
-            (data) => {
-              this.formatPlants(data);
-              this.viewPlants();
-            },
-            () => {
-              this.displayError();
-            }
-          );
-    }
+      return this.plantAPI.fetchPlants(query)
+      .then(data => this.formatPlants(data))
+      }
+  
 
     formatPlants(data){
-        const plantsInfo = data.map(plant => ({ 
-            commonName: plant.commonName, latinName: plant.name, kingdom: plant.kingdom, family: plant.family }))
-        this.plantsInfo = plantsInfo
-        console.log('1')
-        console.log(this.plantsInfo)
-        }
-
-    viewPlants(){
-      return this.plantsInfo
-    }
-
-    displayError(){
-        console.log('Request Failed')
-    }
+      const plantsInfo = data.map(plant => ({ 
+          commonName: plant.commonName, latinName: plant.name, kingdom: plant.kingdom, family: plant.family }))
+      return [plantsInfo]
+      }
 }
 
 export default PlantModel

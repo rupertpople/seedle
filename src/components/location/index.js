@@ -1,7 +1,16 @@
 import React from 'react';
 // import './index.css'
+import { useEffect } from "react";
+import GeolocationAPI from '../../hooks/geocodingAPI';
+
+
 
 const Location = ({postcode}) => {
+  console.log('10')
+  const [geolocation] = GeolocationAPI();
+  console.log(geolocation)
+
+
   return (
     <div className="location">
       <form className="location-form">

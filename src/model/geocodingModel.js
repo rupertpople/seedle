@@ -2,6 +2,7 @@ class GeocodingModel{
     constructor(geocodingAPI){
         this.geocodingAPI = geocodingAPI
         this.postcode = geocodingAPI.postcode
+        this.geolocation = ""
     }
 
     getGeolocation(query) {
@@ -24,6 +25,7 @@ class GeocodingModel{
       const long = geometry.location.lng
       const long4 = long.toFixed(4)
       this.geolocation = `lat=${lat4}&lon=${long4}`
+      return this.geolocation
     }
 
     viewGeolocation(){

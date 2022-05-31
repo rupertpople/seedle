@@ -1,5 +1,5 @@
 .App {
-  background-color: #ffffff;
+  background-color: #f2f3f2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,4 +7,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(143, 199, 145);
+}
+
+.img {
+  -webkit-user-drag: none;
 }

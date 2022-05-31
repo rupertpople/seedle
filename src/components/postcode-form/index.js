@@ -27,12 +27,14 @@ function PostcodeForm() {
   };
 
   return (
-    <div classpostcode="PostcodeForm">
+    <div className="PostcodeForm">
+      <div className="img"><img src="https://i.imgur.com/OkDeTwM.png"width="500px" alt="seedlelogo"></img></div>
+      <div className="vr"></div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={postcode}
-          placeholder="postcode"
+          placeholder="enter your postcode..."
           onChange={(e) => setPostcode(e.target.value)}
         />
         <button type="submit">Search</button>

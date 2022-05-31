@@ -1,17 +1,45 @@
 .PostcodeForm {
+  background-color: #ffffff;
   display: flex;
+  position: absolute;
   justify-content: center;
-  margin-top: 5rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 900px;
+  margin: 150px 0 0;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
 }
+
+.vr {
+  border-left: 1px solid rgb(153, 153, 153);
+  height: 120px;
+  padding: 1rem;
+}
+
 input {
+  outline: none;
+  border: 1.5px solid #3f913f;
   display: block;
+  text-align: center;
   width: 20rem;
   height: 2rem;
   padding: 0.5rem;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 500;
   margin-bottom: 2rem;
+  border-radius: 100px;
 }
+
+::placeholder { 
+  color: rgb(198, 203, 196);
+  opacity: 1;
+}
+
 button {
   background-color: #3f913f;
   color: #ffffff;
@@ -19,7 +47,8 @@ button {
   padding: 1rem;
   width: 21.2rem;
   font-size: 1.2em;
-  border-radius: 0.2rem;
+  font-weight: bold;
+  border-radius: 100px;
   cursor: pointer;
 }
 button:hover {

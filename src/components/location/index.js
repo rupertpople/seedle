@@ -2,13 +2,15 @@ import React from 'react';
 // import './index.css'
 import { useEffect } from "react";
 import GeolocationAPI from '../../hooks/geocodingAPI';
+import BirdAPI from '../../hooks/birdAPI';
+import PlantAPI from '../../hooks/plantAPI';
 
 
 
 const Location = ({postcode}) => {
   console.log('10')
-  const [geolocation] = GeolocationAPI();
-  console.log(geolocation)
+  const [bird] = BirdAPI();
+  console.log(bird)
 
 
   return (

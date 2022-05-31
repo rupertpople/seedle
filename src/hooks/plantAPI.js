@@ -9,7 +9,7 @@ const usePlants= () => {
     const fetchPlants= async () => {
         const plants = new PlantModel(new PlantAPI('lat=51.5074&lon=0.1278'))
         const res = await plants.getPlants();
-        setPlants(res.geolocation);
+        setPlants(res);
     }
 
     useEffect(() => {fetchPlants()}, []);

@@ -9,13 +9,13 @@ const useGeolocation = () => {
     const fetchGeolocation = async () => {
         const geocode = new GeocodingModel(new GeocodingAPI('w149ef'))
         const res = await geocode.getGeolocation();
-        const json = await res.json();
-        setGeolocation(json.geolocation);
+        setGeolocation(res.geolocation);
     }
 
-    useEffect(() => fetchGeolocation(), []);
+    useEffect(() => {fetchGeolocation()}, []);
 
     return [geolocation]
 };
 
 export default useGeolocation;
+

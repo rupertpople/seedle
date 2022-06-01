@@ -1,14 +1,15 @@
 import React from 'react';
 // import './index.css'
 import { useState, useEffect } from "react";
-import GeolocationAPI from '../../hooks/geocodingAPI';
+import GeocodingAPI from '../../model/geocodingAPI';
+import GeocodingModel from '../../model/geocodingModel';
 import BirdAPI from '../../hooks/birdAPI';
 import PlantAPI from '../../hooks/plantAPI';
 import WikiDescriptionAPI from '../../hooks/wikipediaDescriptionAPI';
 import WikiImageAPI from '../../hooks/wikipediaImageAPI'
 
 const Location = () => {
-  const [ postcode, setPostcode ] = useState('');
+  const [ postcode, setPostcode ] = useState("");
   // const [geolocation] = GeolocationAPI(postcode);
   // const [birds] = BirdAPI([geolocation])
   // const [plants] = PlantAPI([geolocation])
@@ -18,9 +19,9 @@ const Location = () => {
 const handleSubmit = (event) => { 
   event.preventDefault();
   setPostcode(event.target.value);
-  console.log('2');
-  console.log(postcode);
-  const [geolocation] = GeolocationAPI(postcode);
+  //console.log('2');
+  new GeocodingModel(new GeocodingAPI(postcode)).getGeolocation(postcode)
+    .then(geolocation => console.log(geolocation));
   // console.log('3');
   // console.log(geolocation);
   // const [birds] = BirdAPI([geolocation])

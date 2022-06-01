@@ -4,13 +4,18 @@ import { useEffect } from "react";
 import GeolocationAPI from '../../hooks/geocodingAPI';
 import BirdAPI from '../../hooks/birdAPI';
 import PlantAPI from '../../hooks/plantAPI';
+import WikiDescriptionAPI from '../../hooks/wikipediaDescriptionAPI';
+import WikiImageAPI from '../../hooks/wikipediaImageAPI'
 
 
 
 const Location = ({postcode}) => {
-  console.log('10')
-  const [bird] = BirdAPI();
-  console.log(bird)
+  const [geolocation] = GeolocationAPI(postcode);
+  const [birds] = BirdAPI([geolocation])
+  const [plants] = PlantAPI([geolocation])
+  console.log('1')
+  const [description] = WikiDescriptionAPI()
+  console.log([description])
 
 
   return (

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import PlantAPI from "../model/plantAPI";
 import PlantModel from "../model/plantModel";
 
-const usePlants= () => {
+const usePlants = () => {
     const [plants, setPlants] = useState([]);
 
     const fetchPlants= async () => {

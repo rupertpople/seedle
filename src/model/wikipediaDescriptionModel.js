@@ -4,26 +4,29 @@ class WikipediaDescriptionModel{
     }
 
     getDescription(query) {
-        this.wikiAPI.fetchDescription(
-            query,
-            (data) => {
-              this.formatDescription(data);
-              this.viewDescription();
-            },
-            () => {
-              this.displayError();
-            }
-          );
+        return this.wikiAPI.fetchDescription(query)
+        .then((data => {
+          return this.formatDescription(data)
+        }))
     }
 
     formatDescription(data){
-      const description = data
+      const object = Object.assign(
+        {}, 
+        ...function _flatten(o) { 
+          return [].concat(...Object.keys(o)
+            .map(k => 
+              typeof o[k] === 'object' ?
+                _flatten(o[k]) : 
+                ({[k]: o[k]})
+            )
+          );
+        }(data)
+      )
+      const description = object.extract
+      return description
       }
-      
-
-    viewDescription(){
-      return this.birdsInfo
-    }
+    
 
     displayError(){
         console.log('Request Failed')

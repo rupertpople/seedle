@@ -4,30 +4,27 @@ class WikipediaImageModel{
     }
 
     getImage(query) {
-        this.wikiAPI.fetchImage(
-            query,
-            (data) => {
-              this.formatImage(data);
-              this.viewImage();
-            },
-            () => {
-              this.displayError();
-            }
-          );
+        return this.wikiAPI.fetchImage(query)
+        .then(data => this.formatImage(data))
     }
 
     formatImage(data){
-      console.log(data)
-      }
+      const object = Object.assign(
+        {}, 
+        ...function _flatten(o) { 
+          return [].concat(...Object.keys(o)
+            .map(k => 
+              typeof o[k] === 'object' ?
+                _flatten(o[k]) : 
+                ({[k]: o[k]})
+            )
+          );
+        }(data)
+      )
+      const image = object.source
+      return image
+  }
       
-
-    viewImage(){
-      return this.image
-    }
-
-    displayError(){
-        console.log('Request Failed')
-    }
 }
 
 export default WikipediaImageModel

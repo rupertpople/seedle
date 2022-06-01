@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from "react";
 // import './index.css'
 import { useEffect } from "react";
 import GeolocationAPI from '../../hooks/geocodingAPI';
@@ -14,19 +14,18 @@ const Location = ({postcode}) => {
 
 
   return (
-    <div className="location">
-      <form className="location-form">
+    <div className="Location">
+      <div className="img"><img src="https://i.imgur.com/OkDeTwM.png"width="500px" alt="seedlelogo"></img></div>
+      <div className="vr"></div>
+      <form onSubmit={handleSubmit}>
         <input
-          id="postcode"
-          className="form-field"
           type="text"
-          placeholder="Enter postcode here..."
-          postcode="postcode"
+          value={postcode}
+          placeholder="enter your postcode..."
+          onChange={(e) => setPostcode(e.target.value)}
         />
-        <span id="postcode-error">Please enter a valid postcode</span>
-        <button className="form-field" type="submit">
-          Search
-        </button>
+        <button type="submit">Search</button>
+        <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
     </div>
   );
@@ -35,6 +34,33 @@ const Location = ({postcode}) => {
 export default Location;
 
 
-{/* <form action='sessions/new' method='GET'>
-<button class="botton" id="Login" type="submit" value="Log in"<>Log In</a></button>               
-</form>  */}
+
+
+// Postcode form test:
+
+// function PostcodeForm() {
+//   const [postcode, setPostcode] = useState("");
+//   const [message, setMessage] = useState("");
+
+//   let handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       let res = await fetch("https://httpbin.org/post", {
+//         method: "POST",
+//         body: JSON.stringify({
+//           postcode: postcode
+//         }),
+//       });
+//       let resJson = await res.json();
+//       if (res.status === 200) {
+//         setPostcode("");
+//         setMessage("Postcode accepted!");
+//       } else {
+//         setMessage("Some error occured");
+//       }
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   };
+
+// export default PostcodeForm;

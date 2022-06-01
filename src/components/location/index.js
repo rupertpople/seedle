@@ -1,6 +1,7 @@
 import React from 'react';
 // import './index.css'
-import { useEffect } from "react";
+import { useState } from "react";
+import PostList from '../post-list/index'
 import GeolocationAPI from '../../hooks/geocodingAPI';
 import BirdAPI from '../../hooks/birdAPI';
 import PlantAPI from '../../hooks/plantAPI';
@@ -9,39 +10,28 @@ import WikiImageAPI from '../../hooks/wikipediaImageAPI'
 
 
 
-const Location = ({postcode}) => {
-  // const [geolocation] = GeolocationAPI(postcode);
-  // const [birds] = BirdAPI([geolocation])
-  // const [plants] = PlantAPI([geolocation])
-  // console.log('1')
-  // const [description] = WikiDescriptionAPI()
-  
-const handleSubmit = () => {
-  console.log('2');
-  console.log(postcode);
-  const [geolocation] = GeolocationAPI(postcode);
-  console.log('3');
-  console.log(geolocation);
-  const [birds] = BirdAPI([geolocation])
-  console.log(birds);
-  const [plants] = PlantAPI([geolocation])
-  console.log(plants);
-}
+const Location = () => {
+  const [postcode, setPostcode] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const geolocation = { postcode }
+    console.log(postcode)
+
+  }
 
   return (
     <div className="location">
-      <form onSubmit={handleSubmit()} className="location-form">
+      <form onSubmit={handleSubmit} className="location-form">
         <input
           id="postcode"
           className="form-field"
           type="text"
           placeholder="Enter postcode here..."
-          postcode="postcode"
+          value={postcode}
+          onChange={(e) => setPostcode(e.target.value)}
         />
-        <span id="postcode-error">Please enter a valid postcode</span>
-        <button className="form-field" type="submit">
-          Search
-        </button>
+        <button className="form-field" type="submit">Search</button>
       </form>
     </div>
   );

@@ -10,17 +10,27 @@ import WikiImageAPI from '../../hooks/wikipediaImageAPI'
 
 
 const Location = ({postcode}) => {
+  // const [geolocation] = GeolocationAPI(postcode);
+  // const [birds] = BirdAPI([geolocation])
+  // const [plants] = PlantAPI([geolocation])
+  // console.log('1')
+  // const [description] = WikiDescriptionAPI()
+  
+const handleSubmit = () => {
+  console.log('2');
+  console.log(postcode);
   const [geolocation] = GeolocationAPI(postcode);
+  console.log('3');
+  console.log(geolocation);
   const [birds] = BirdAPI([geolocation])
+  console.log(birds);
   const [plants] = PlantAPI([geolocation])
-  console.log('1')
-  const [description] = WikiDescriptionAPI()
-  console.log([description])
-
+  console.log(plants);
+}
 
   return (
     <div className="location">
-      <form className="location-form">
+      <form onSubmit={handleSubmit()} className="location-form">
         <input
           id="postcode"
           className="form-field"

@@ -7,7 +7,7 @@ const useGeolocation = (postcode) => {
     const [geolocation, setGeolocation] = useState([]);
 
     const fetchGeolocation = async () => {
-        const geocode = new GeocodingModel(new GeocodingAPI('w149ef'))
+        const geocode = new GeocodingModel(new GeocodingAPI(postcode))
         const res = await geocode.getGeolocation();
         setGeolocation(res);
     }

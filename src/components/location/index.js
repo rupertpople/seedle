@@ -6,8 +6,7 @@ import BirdAPI from '../../hooks/birdAPI';
 import PlantAPI from '../../hooks/plantAPI';
 import WikiDescriptionAPI from '../../hooks/wikipediaDescriptionAPI';
 import WikiImageAPI from '../../hooks/wikipediaImageAPI'
-
-
+import GeocodingAPI from '../../model/geocodingAPI';
 
 const Location = ({postcode}) => {
   // const [geolocation] = GeolocationAPI(postcode);

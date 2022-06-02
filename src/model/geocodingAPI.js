@@ -8,7 +8,6 @@ class GeocodingAPI {
     }
 
     fetchGeolocation(query = this.postcode) {
-        console.log(query)
         return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${apiKey}`)
         .then((response) => response.json())
     }

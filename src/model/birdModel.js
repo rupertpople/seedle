@@ -11,7 +11,7 @@ class BirdModel{
     formatBirds(data){
       const birdsInfo = data.map(bird => ({ 
           commonName: bird.commonName, latinName: bird.name, kingdom: bird.kingdom, family: bird.family }))
-      return [birdsInfo]
+      return birdsInfo
       }
 }
 

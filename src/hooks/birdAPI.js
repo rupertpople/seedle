@@ -1,20 +1,16 @@
-import React from "react";
-import { useEffect, useState } from 'react';
+//import React from "react";
 import BirdAPI from "../model/birdAPI";
 import BirdModel from "../model/birdModel";
 
 const useBirds= () => {
-    const [birds, setBirds] = useState([]);
-
-    const fetchBirds= async () => {
-        const birds= new BirdModel(new BirdAPI('lat=51.5074&lon=0.1278'))
+    
+    const fetchBirds= async (geolocation) => {
+        const birds= new BirdModel(new BirdAPI(geolocation))//'lat=51.5074&lon=0.1278'))
         const res = await birds.getBirds();
-        setBirds(res);
-    }
+        return res;
+    }    
 
-    useEffect(() => {fetchBirds()}, []);
-
-    return [birds]
+    return {  fetchBirds }
 };
 
 export default useBirds;

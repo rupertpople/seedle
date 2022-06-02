@@ -10,6 +10,7 @@ import WikiImageAPI from '../../hooks/wikipediaImageAPI'
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
+
   // const [geolocation] = GeolocationAPI(postcode);
   // const [birds] = BirdAPI([geolocation])
   // const [plants] = PlantAPI([geolocation])

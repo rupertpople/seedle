@@ -27,10 +27,6 @@ class WikipediaDescriptionModel{
       return description
       }
     
-
-    displayError(){
-        console.log('Request Failed')
-    }
 }
 
 export default WikipediaDescriptionModel

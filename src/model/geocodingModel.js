@@ -26,9 +26,6 @@ class GeocodingModel{
       return this.geolocation
     }
 
-    displayError(){
-      console.log('Failed request')
-    }
 }
 
 export default GeocodingModel

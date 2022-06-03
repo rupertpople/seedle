@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 const mergePlantsandBirds = () => {
@@ -12,11 +12,8 @@ const mergePlantsandBirds = () => {
             var commonNameB = b.commonName.toUpperCase();
             return (commonNameA < commonNameB) ? -1 : (commonNameA > commonNameB) ? 1 : 0;
         });
-        setPlantsandBirds(mergedarrays)
         return mergedarrays
     }
-
-    useEffect(() => {merge()}, []);
 
     return {
         merge

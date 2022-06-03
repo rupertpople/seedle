@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import './index.css'
 import { useState } from "react";
 //import GeocodingAPI from '../../model/geocodingAPI';
@@ -21,7 +21,7 @@ const Location = () => {
   const [plants, setPlants] = useState(null);
   const {  fetchPlants } = usePlants()
   const { merge } = mergePlantsandBirds()
-  const [ plantsandbirds, setPlantsandBirds ] = useState(null)
+  const [plantsandbirds, setPlantsandBirds] = useState(null)
   const { addDescriptionandImage } = addImageandDescription()
 
 const handleSubmit = async (event) => { 
@@ -33,17 +33,17 @@ const handleSubmit = async (event) => {
   const plants = await fetchPlants(geolocation);
   setPlants(plants);
   const species = await merge(birds,plants);
-  setPlantsandBirds(species)
-  const species2 = await addDescriptionandImage(species)
-  console.log(species2)
-  setPlantsandBirds(species2)
+  const species2 = await addDescriptionandImage(species);
+  setPlantsandBirds(species2);
 }
 
 const handleChange = (event) => {
   setPostcode(event.target.value);
 };
 
-const plantsandbirdsListNode =  plantsandbirds? (
+const plantsandbirdsListNode = plantsandbirds? (
+  console.log('1'),
+  console.log(plantsandbirds),
   <div className="location">
     {plantsandbirds.map((species, index)=>{
       return <div key={index}>{species.commonName}</div>;

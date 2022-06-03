@@ -6,7 +6,7 @@ import WikipediaImageAPI from "../model/wikipediaImageAPI";
 import WikipediaImageModel from "../model/wikipediaImageModel";
 
 const addWikiDescriptionandImage = () => {
-
+    
     const fetchDescription = async (species) => {
         const plants = new WikipediaDescriptionModel (new WikipediaDescriptionAPI(species))
         const res = await plants.getDescription();
@@ -21,14 +21,11 @@ const addWikiDescriptionandImage = () => {
 
     const addDescriptionandImage = async (birdsandplants) => {
         const array = await Promise.all(birdsandplants.map( async species => ({
-            commonName: species.commonName, latinName: species.name, kingdom: species.kingdom, family: species.family, count: species.count,
+            commonName: species.commonName, latinName: species.latinName, kingdom: species.kingdom, family: species.family, count: species.count,
             image: await fetchImage(species.commonName), description: await fetchDescription(species.commonName)})))
         return [array]
     }
     
-
-    useEffect(() => {addDescriptionandImage}, []);
-
     return {
         addDescriptionandImage
     }

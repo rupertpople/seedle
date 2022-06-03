@@ -16,9 +16,9 @@ describe("PlantModel", () => {
     
     it('#formatPlants converts JSON object to desired output', () => {
         const mockedData = [
-            {commonName: "Field Maple", name: "Acer campestre", kingdom:"Plantae", family:"Sapindaceae" }
+            {commonName: "Field Maple", name: "Acer campestre", kingdom:"Plantae", family:"Sapindaceae", count:"10" }
         ]
         const model = new PlantModel(mockAPI);
-        expect(model.formatPlants(mockedData)).toEqual([[{commonName: "Field Maple", latinName: "Acer campestre", kingdom:"Plantae", family:"Sapindaceae" }]])    
+        expect(model.formatPlants(mockedData)).toEqual([[{commonName: "Field Maple", latinName: "Acer campestre", kingdom:"Plantae", family:"Sapindaceae", count:"10" }]])    
     })
 })

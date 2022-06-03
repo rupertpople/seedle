@@ -11,7 +11,7 @@ class PlantModel{
 
     formatPlants(data){
       const plantsInfo = data.map(plant => ({ 
-          commonName: plant.commonName, latinName: plant.name, kingdom: plant.kingdom, family: plant.family }))
+          commonName: plant.commonName, latinName: plant.name, kingdom: plant.kingdom, family: plant.family, count: plant.count }))
       return plantsInfo
       }
 }

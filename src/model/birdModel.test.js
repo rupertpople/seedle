@@ -19,6 +19,6 @@ describe("BirdModel", () => {
             [{commonName: "Lesser Redpoll", name: "Acanthis cabaret", kingdom:"Animalia", family:"Fringillidae", count:"10" }]
         
         const model = new BirdModel(mockAPI);
-        expect(model.formatBirds(mockedData)).toEqual([[{commonName: "Lesser Redpoll", latinName: "Acanthis cabaret", kingdom:"Animalia", family:"Fringillidae", count:"10" }]])
+        expect(model.formatBirds(mockedData)).toEqual([{commonName: "Lesser Redpoll", latinName: "Acanthis cabaret", kingdom:"Animalia", family:"Fringillidae", count:"10" }])
     })
 })

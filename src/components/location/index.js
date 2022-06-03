@@ -1,37 +1,41 @@
 import React from 'react';
 // import './index.css'
-import { useState, useEffect } from "react";
-import GeocodingAPI from '../../model/geocodingAPI';
-import GeocodingModel from '../../model/geocodingModel';
-import BirdAPI from '../../hooks/birdAPI';
-import PlantAPI from '../../hooks/plantAPI';
-import WikiDescriptionAPI from '../../hooks/wikipediaDescriptionAPI';
-import WikiImageAPI from '../../hooks/wikipediaImageAPI'
+import { useState } from "react";
+//import GeocodingAPI from '../../model/geocodingAPI';
+//import GeocodingModel from '../../model/geocodingModel';
+//import BirdAPI from '../../hooks/birdAPI';
+//import PlantAPI from '../../hooks/plantAPI';
+//import WikiDescriptionAPI from '../../hooks/wikipediaDescriptionAPI';
+//import WikiImageAPI from '../../hooks/wikipediaImageAPI'
+import useGeolocation from '../../hooks/geocodingAPI';
+import useBirds from '../../hooks/birdAPI';
+
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
+  const [birds, setBirds] = useState(null);
+  const {  fetchGeolocation } = useGeolocation()
+  const {  fetchBirds } = useBirds()
 
-  // const [geolocation] = GeolocationAPI(postcode);
-  // const [birds] = BirdAPI([geolocation])
-  // const [plants] = PlantAPI([geolocation])
-  // console.log('1')
-  // const [description] = WikiDescriptionAPI()
-  
-const handleSubmit = (event) => { 
+const handleSubmit = async (event) => { 
   event.preventDefault();
-  setPostcode(event.target.value);
-  //console.log('2');
-  new GeocodingModel(new GeocodingAPI(postcode)).getGeolocation(postcode)
-    .then(geolocation => console.log(geolocation));
-  // console.log('3');
-  // console.log(geolocation);
-  // const [birds] = BirdAPI([geolocation])
-  // console.log(birds);
-  // const [plants] = PlantAPI([geolocation])
-  // console.log(plants);
+
+  const geolocation = await fetchGeolocation(postcode);
+  const birds = await fetchBirds(geolocation);
+  setBirds(birds);
 }
 
-const handleChange = (event) => {setPostcode(event.target.value)};
+const handleChange = (event) => {
+  setPostcode(event.target.value);
+};
+
+const birdListNode =  birds ? (
+  <div className="location">
+    {birds.map((bird, index)=>{
+      return <div key={index}>{bird.commonName}</div>;
+    })}
+  </div>
+  ): null;
 
   return (
     <div className="location">
@@ -50,13 +54,9 @@ const handleChange = (event) => {setPostcode(event.target.value)};
           Search
         </button>
       </form>
+      {birdListNode}
     </div>
   );
 }
 
 export default Location;
-
-
-{/* <form action='sessions/new' method='GET'>
-<button class="botton" id="Login" type="submit" value="Log in"<>Log In</a></button>               
-</form>  */}

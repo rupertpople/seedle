@@ -42,10 +42,8 @@ const handleChange = (event) => {
 };
 
 const plantsandbirdsListNode = plantsandbirds? (
-  console.log('1'),
-  console.log(plantsandbirds),
   <div className="location">
-    {plantsandbirds.map((species, index)=>{
+    {plantsandbirds[0].map((species, index)=>{
       return <div key={index}>{species.commonName}</div>;
     })}
   </div>

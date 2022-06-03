@@ -51,12 +51,12 @@ const plantsandbirdsListNode =  plantsandbirds? (
       <form onSubmit={handleSubmit} className="location-form">
         <input
           id="postcode"
-          className="form-field"
+          className="postcode-field"
           type="text"
           value={postcode}
           placeholder="Enter postcode here..."
           postcode="postcode"
-          onChange={handleChange} 
+          onChange={handleChange}
         />
         <button className="form-field" type="submit">
           Search
@@ -68,3 +68,4 @@ const plantsandbirdsListNode =  plantsandbirds? (
 }
 
 export default Location;
+

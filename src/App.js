@@ -12,8 +12,9 @@ const App = () => {
   return (
     <div className="App">
       <h2>Welcome to Seedle!</h2>
+      <h3>Your Online Local Species Explorer </h3>
       <Post />
-      <Location index={1}/>
+      <Location index={1}/> 
     </div>
   );
 };

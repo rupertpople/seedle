@@ -10,6 +10,7 @@ import { useState } from "react";
 import useGeolocation from '../../hooks/geocodingAPI';
 import useBirds from '../../hooks/birdAPI';
 import usePlants from '../../hooks/plantAPI';
+import mergePlantsandBirds from '../../hooks/mergeBirdsandPlants';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
@@ -18,6 +19,8 @@ const Location = () => {
   const {  fetchBirds } = useBirds()
   const [plants, setPlants] = useState(null);
   const {  fetchPlants } = usePlants()
+  const { merge } = mergePlantsandBirds()
+  const [ plantsandbirds, setPlantsandBirds ] = useState(null)
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
@@ -27,27 +30,21 @@ const handleSubmit = async (event) => {
   setBirds(birds);
   const plants = await fetchPlants(geolocation);
   setPlants(plants);
+  const species = await merge(birds,plants);
+  setPlantsandBirds(species)
 }
 
 const handleChange = (event) => {
   setPostcode(event.target.value);
 };
 
-const birdListNode =  birds ? (
+const plantsandbirdsListNode =  plantsandbirds? (
   <div className="location">
-    {birds.map((bird, index)=>{
-      return <div key={index}>{bird.commonName}</div>;
+    {plantsandbirds.map((species, index)=>{
+      return <div key={index}>{species.commonName}</div>;
     })}
   </div>
   ): null;
-
-const plantListNode =  plants ? (
-  <div className="location">
-    {plants.map((plant, index)=>{
-      return <div key={index}>{plant.commonName}</div>;
-    })}
-  </div>
-): null;
 
   return (
     <div className="location">
@@ -65,7 +62,7 @@ const plantListNode =  plants ? (
           Search
         </button>
       </form>
-      {birdListNode} {plantListNode}
+      {plantsandbirdsListNode}
     </div>
   );
 }

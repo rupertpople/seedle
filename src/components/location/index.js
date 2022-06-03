@@ -10,7 +10,6 @@ import { useState } from "react";
 import useGeolocation from '../../hooks/geocodingAPI';
 import useBirds from '../../hooks/birdAPI';
 
-
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
   const [birds, setBirds] = useState(null);

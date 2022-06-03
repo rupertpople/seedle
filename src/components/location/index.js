@@ -9,12 +9,15 @@ import { useState } from "react";
 //import WikiImageAPI from '../../hooks/wikipediaImageAPI'
 import useGeolocation from '../../hooks/geocodingAPI';
 import useBirds from '../../hooks/birdAPI';
+import usePlants from '../../hooks/plantAPI';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
   const [birds, setBirds] = useState(null);
   const {  fetchGeolocation } = useGeolocation()
   const {  fetchBirds } = useBirds()
+  const [plants, setPlants] = useState(null);
+  const {  fetchPlants } = usePlants()
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
@@ -22,6 +25,8 @@ const handleSubmit = async (event) => {
   const geolocation = await fetchGeolocation(postcode);
   const birds = await fetchBirds(geolocation);
   setBirds(birds);
+  const plants = await fetchPlants(geolocation);
+  setPlants(plants);
 }
 
 const handleChange = (event) => {
@@ -36,6 +41,14 @@ const birdListNode =  birds ? (
   </div>
   ): null;
 
+const plantListNode =  plants ? (
+  <div className="location">
+    {plants.map((plant, index)=>{
+      return <div key={index}>{plant.commonName}</div>;
+    })}
+  </div>
+): null;
+
   return (
     <div className="location">
       <form onSubmit={handleSubmit} className="location-form">
@@ -48,12 +61,11 @@ const birdListNode =  birds ? (
           postcode="postcode"
           onChange={handleChange} 
         />
-        <span id="postcode-error">Please enter a valid postcode</span>
         <button className="form-field" type="submit">
           Search
         </button>
       </form>
-      {birdListNode}
+      {birdListNode} {plantListNode}
     </div>
   );
 }

@@ -1,4 +1,3 @@
-//import React from "react";
 import BirdAPI from "../model/birdAPI";
 import BirdModel from "../model/birdModel";
 

@@ -11,6 +11,7 @@ import useGeolocation from '../../hooks/geocodingAPI';
 import useBirds from '../../hooks/birdAPI';
 import usePlants from '../../hooks/plantAPI';
 import mergePlantsandBirds from '../../hooks/mergeBirdsandPlants';
+import addImageandDescription from '../../hooks/addImageandDescription';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
@@ -21,6 +22,7 @@ const Location = () => {
   const {  fetchPlants } = usePlants()
   const { merge } = mergePlantsandBirds()
   const [ plantsandbirds, setPlantsandBirds ] = useState(null)
+  const { addDescriptionandImage } = addImageandDescription()
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
@@ -32,6 +34,9 @@ const handleSubmit = async (event) => {
   setPlants(plants);
   const species = await merge(birds,plants);
   setPlantsandBirds(species)
+  const species2 = await addDescriptionandImage(species)
+  console.log(species2)
+  setPlantsandBirds(species2)
 }
 
 const handleChange = (event) => {

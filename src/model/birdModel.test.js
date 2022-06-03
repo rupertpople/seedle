@@ -16,9 +16,9 @@ describe("BirdModel", () => {
 
     it('#formatBirds converts JSON object to desired output', () => {
         const mockedData = 
-            [{commonName: "Lesser Redpoll", name: "Acanthis cabaret", kingdom:"Animalia", family:"Fringillidae" }]
+            [{commonName: "Lesser Redpoll", name: "Acanthis cabaret", kingdom:"Animalia", family:"Fringillidae", count:"10" }]
         
         const model = new BirdModel(mockAPI);
-        expect(model.formatBirds(mockedData)).toEqual([[{commonName: "Lesser Redpoll", latinName: "Acanthis cabaret", kingdom:"Animalia", family:"Fringillidae" }]])
+        expect(model.formatBirds(mockedData)).toEqual([{commonName: "Lesser Redpoll", latinName: "Acanthis cabaret", kingdom:"Animalia", family:"Fringillidae", count:"10" }])
     })
 })

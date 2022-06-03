@@ -66,7 +66,7 @@ const plantListNode =  plants ? (
           Search
         </button>
       </form>
-      {birdListNode},{plantListNode}
+      {birdListNode} {plantListNode}
     </div>
   );
 }

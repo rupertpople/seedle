@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 const mergePlantsandBirds = () => {
     const [plantsandbirds, setPlantsandBirds] = useState([]);
 
-    const merge = (birds, plants) => {
+    const merge = async (birds, plants) => {
         const mergedarrays = birds.concat(plants)
         mergedarrays.sort(function(a, b) {
             var commonNameA = a.commonName.toUpperCase();

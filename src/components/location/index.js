@@ -35,6 +35,7 @@ const handleSubmit = async (event) => {
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
+  console.log(species2)
 }
 
 const handleChange = (event) => {

@@ -30,11 +30,21 @@ const addWikiDescriptionandImage = () => {
     const addDescriptionandImage = async (birdsandplants) => {
         const array = await Promise.all(birdsandplants.map( async species => ({
             commonName: species.commonName, latinName: species.latinName, kingdom: species.kingdom, family: species.family, count: species.count,
-            image: await fetchWikiImage(species.commonName), description: await fetchDescription(species.commonName)})))
+            image: await fetchWikiImage(species.commonName.toLowerCase()), description: await fetchDescription(species.commonName.toLowerCase())})))
             console.log(array)
         await Promise.all(array.forEach(async species => {
             if (species.image === undefined) {
-                species.image = await fetchPixabayImage(species.commonName)
+                species.image = await fetchWikiImage(species.latinName.toLowerCase())
+                }
+            }))
+        await Promise.all(array.forEach(async species => {
+            if (species.image === undefined) {
+                species.image = await fetchPixabayImage(species.commonName.toLowerCase())
+            }
+        }))
+        await Promise.all(array.forEach(async species => {
+            if (species.image === undefined) {
+                species.image = await fetchWikiImage(species.family.toLowerCase())
             }
         }))
         return [array]

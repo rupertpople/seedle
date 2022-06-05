@@ -35,7 +35,6 @@ const handleSubmit = async (event) => {
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
-  console.log(species2)
 }
 
 const handleChange = (event) => {
@@ -45,7 +44,7 @@ const handleChange = (event) => {
 const plantsandbirdsListNode = plantsandbirds? (
   <div className="location">
     {plantsandbirds[0].map((species, index)=>{
-      return <div key={index}>{species.commonName}</div>;
+      return <div key={index}>{species.name}</div>;
     })}
   </div>
   ): null;

@@ -12,8 +12,9 @@ body {
 }
 
 .seedlelogo {
-  min-height: 30vh;
+  min-height: 20vh;
   display: flex;
+  margin-top: 50px;
   align-items: center;
   justify-content: center;
   font-size: calc(15px + 1vmin);

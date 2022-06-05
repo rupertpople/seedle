@@ -1,12 +1,6 @@
 import React, { useEffect } from 'react';
-// import './index.css'
+import './index.css'
 import { useState } from "react";
-//import GeocodingAPI from '../../model/geocodingAPI';
-//import GeocodingModel from '../../model/geocodingModel';
-//import BirdAPI from '../../hooks/birdAPI';
-//import PlantAPI from '../../hooks/plantAPI';
-//import WikiDescriptionAPI from '../../hooks/wikipediaDescriptionAPI';
-//import WikiImageAPI from '../../hooks/wikipediaImageAPI'
 import useGeolocation from '../../hooks/geocodingAPI';
 import useBirds from '../../hooks/birdAPI';
 import usePlants from '../../hooks/plantAPI';
@@ -53,6 +47,8 @@ const plantsandbirdsListNode = plantsandbirds? (
   return (
     <div className="location">
       <form onSubmit={handleSubmit} className="location-form">
+        <h3>Your Online Local Species Explorer </h3>
+        <div class="to-right"></div><div class="to-left"></div>
         <input
           id="postcode"
           className="postcode-field"

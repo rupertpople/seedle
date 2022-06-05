@@ -4,12 +4,17 @@ body {
   color:#fff;
   line-height:1.2;
   margin:0;
-  background: url(https://mariongrandvincent.github.io/HTML-Personal-website/img-codePen/tropical-login-form.jpg);
+  background: url(https://i.imgur.com/0UJ0q2i.png);
   background-repeat: no-repeat;
   background-size: 1950px;
   font-size: 18px;
 }
 
-.heading {
-  display: center;
+.seedlelogo {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(15px + 1vmin);
 }

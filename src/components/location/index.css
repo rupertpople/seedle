@@ -1,0 +1,89 @@
+
+.form-field {
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.form-field:hover {
+  background-color: rgba(8, 144, 22, 0.565);
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+h3 {
+  text-align:center; 
+  color: #fff;
+  text-shadow: 1px 1px 0px #222;
+  margin:50px 0px 0px 0px;
+  font-size:20px;
+  font-weight:500;
+  font-style:italic
+}
+
+.container {
+  width:560px;
+  height:530px;
+  margin:auto;
+  display:block;
+  background-color:rgba(0,0,0,0.5);
+  border-radius:15px;
+  padding:15px;
+  margin-bottom:50px;
+}
+
+.location-form {
+  width:40%;
+  margin:auto;
+  display:block;
+  margin-top:30px;
+}
+
+label {
+  width: 100%;
+  display: inline-block;
+  padding:0px 0px 5px 5px;
+  margin-top: 20px;
+  font-size:18px;
+}
+
+input {
+  border: 0px none;
+  width: 94%;
+  border-radius: 4px;
+  height: 25px;
+  padding: 5px 3%;
+  font-size:15px;
+  font-family: inherit;
+  color:#222;
+}
+
+button {
+  width:100%;
+  background-color:rgba(74,129,51,0.4);
+  border:2px solid #6FC149;
+  color:#fff;
+  border-radius:5px;
+  height:50px;
+  text-transform:uppercase;
+  font-size:19px;
+  cursor:pointer;
+  transition:all 0.3s;
+}
+
+.path-moving,
+.path-back {
+    fill: none;
+    stroke: #64A546;
+    stroke-width: 3px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.path-moving {
+    -webkit-transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s;
+    transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s;
+    stroke: #ffffff;
+    stroke-dasharray: 110;
+    stroke-dashoffset: -32;
+}

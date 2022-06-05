@@ -7,13 +7,13 @@ body {
   background: url(https://i.imgur.com/0UJ0q2i.png);
   background-repeat: no-repeat;
   background-size: 1950px;
+  background-attachment: fixed;
   font-size: 18px;
 }
 
 .seedlelogo {
-  min-height: 40vh;
+  min-height: 30vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(15px + 1vmin);

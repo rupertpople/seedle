@@ -46,8 +46,9 @@ const plantsandbirdsListNode = plantsandbirds? (
 
   return (
     <div className="location">
-      <h3>Your Online Local Species Explorer </h3>
       <form onSubmit={handleSubmit} className="location-form">
+        <h3>Your Online Local Species Explorer </h3>
+        <div class="to-right"></div><div class="to-left"></div>
         <input
           id="postcode"
           className="postcode-field"

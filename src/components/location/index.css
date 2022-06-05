@@ -1,42 +1,56 @@
-
-.form-field {
-  cursor: pointer; /* Mouse pointer on hover */
+body {
+  bottom: 100px;
 }
 
-.form-field:hover {
-  background-color: rgba(8, 144, 22, 0.565);
+.location {
+  width:550px;
+  height:240px;
+  margin: auto;
+  display:block;
+  background-color:rgba(0,0,0,0.5);
+  bottom: 100px;
+  border-radius:5px;
+  padding: 1px;
 }
 
-textarea:focus, input:focus{
-    outline: none;
+.location-form {
+  width:480px;
+  height:180px;
+  margin: auto;
+  margin-bottom: 800px;
+  display:block;
+  border-radius: 10px;
 }
 
 h3 {
   text-align:center; 
   color: #fff;
   text-shadow: 1px 1px 0px #222;
-  margin:50px 0px 0px 0px;
+  margin:20px 0px 0px 0px;
+  margin-bottom: 20px;
   font-size:20px;
   font-weight:500;
   font-style:italic
 }
 
-.container {
-  width:560px;
-  height:530px;
-  margin:auto;
-  display:block;
-  background-color:rgba(0,0,0,0.5);
-  border-radius:15px;
-  padding:15px;
-  margin-bottom:50px;
+.location-form div.to-right {
+  width: 220px;
+  position:relative;
+  left: 250px;
+  border: 0px none;
+  height: 3px;
+  background-image: linear-gradient(to left,transparent, #F9E206);
+  top: 13px;
 }
 
-.location-form {
-  width:40%;
-  margin:auto;
-  display:block;
-  margin-top:30px;
+.location-form div.to-left {
+  width: 250px;
+  position:relative;
+  left: 10px;
+  border: 0px none;
+  height: 3px;
+  background-image: linear-gradient(to right,transparent, #F9E206);
+  top: 10px;
 }
 
 label {
@@ -52,6 +66,7 @@ input {
   width: 94%;
   border-radius: 4px;
   height: 25px;
+  margin-top: 45px;
   padding: 5px 3%;
   font-size:15px;
   font-family: inherit;
@@ -69,6 +84,7 @@ button {
   font-size:19px;
   cursor:pointer;
   transition:all 0.3s;
+  margin-top: 10px;
 }
 
 .path-moving,
@@ -86,4 +102,12 @@ button {
     stroke: #ffffff;
     stroke-dasharray: 110;
     stroke-dashoffset: -32;
+}
+
+.form-field {
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.form-field:hover {
+  background-color: rgba(8, 144, 22, 0.565);
 }

@@ -19,6 +19,7 @@ const Location = () => {
   const { merge } = mergePlantsandBirds();
   const [plantsandbirds, setPlantsandBirds] = useState(null);
   const { addDescriptionandImage } = addImageandDescription();
+  const [ message, setMessage ] = useState("");
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
@@ -31,12 +32,13 @@ const handleSubmit = async (event) => {
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
+  setMessage(`Showing results for ${postcode}`);
 }
 
 const handleChange = (event) => {
   setPostcode(event.target.value);
 };
-
+ 
 const speciesDetails = plantsandbirds? (
   <div className="location">
     <PostList speciesInfo={plantsandbirds}/>
@@ -60,6 +62,7 @@ const speciesDetails = plantsandbirds? (
         <button className="form-field" type="submit">
           Search
         </button>
+        <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
       {speciesDetails}
     </div>

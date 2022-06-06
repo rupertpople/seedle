@@ -11,7 +11,8 @@ const Post = ({species}) => {
       <p className="post-latinName">{post.latinName}</p>
       <p className="post-kingdom">{post.kingdom}</p>
       <p className="post-family">{post.family}</p>
-
+      <p className="post-description">{post.description}</p>
+      <p className="post-image">{post.image || post.image2}</p>
     </div>
   );
 };

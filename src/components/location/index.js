@@ -6,17 +6,19 @@ import useBirds from '../../hooks/birdAPI';
 import usePlants from '../../hooks/plantAPI';
 import mergePlantsandBirds from '../../hooks/mergeBirdsandPlants';
 import addImageandDescription from '../../hooks/addImageandDescription';
+import PostList from '../post-list/index'
+import Post from '../post';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
   const [birds, setBirds] = useState(null);
-  const {  fetchGeolocation } = useGeolocation()
-  const {  fetchBirds } = useBirds()
+  const {  fetchGeolocation } = useGeolocation();
+  const {  fetchBirds } = useBirds();
   const [plants, setPlants] = useState(null);
-  const {  fetchPlants } = usePlants()
-  const { merge } = mergePlantsandBirds()
-  const [plantsandbirds, setPlantsandBirds] = useState(null)
-  const { addDescriptionandImage } = addImageandDescription()
+  const {  fetchPlants } = usePlants();
+  const { merge } = mergePlantsandBirds();
+  const [plantsandbirds, setPlantsandBirds] = useState(null);
+  const { addDescriptionandImage } = addImageandDescription();
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
@@ -35,11 +37,9 @@ const handleChange = (event) => {
   setPostcode(event.target.value);
 };
 
-const plantsandbirdsListNode = plantsandbirds? (
+const speciesDetails = plantsandbirds? (
   <div className="location">
-    {plantsandbirds[0].map((species, index)=>{
-      return <div key={index}>{species.image3}</div>;
-    })}
+    <PostList speciesInfo={plantsandbirds}/>
   </div>
   ): null;
 
@@ -47,7 +47,7 @@ const plantsandbirdsListNode = plantsandbirds? (
     <div className="location">
       <form onSubmit={handleSubmit} className="location-form">
         <h3>Your Online Local Species Explorer </h3>
-        <div class="to-right"></div><div class="to-left"></div>
+        <div className="to-right"></div><div className="to-left"></div>
         <input
           id="postcode"
           className="postcode-field"
@@ -61,10 +61,9 @@ const plantsandbirdsListNode = plantsandbirds? (
           Search
         </button>
       </form>
-      {plantsandbirdsListNode}
+      {speciesDetails}
     </div>
   );
 }
 
 export default Location;
-

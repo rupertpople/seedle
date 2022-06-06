@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from "react";
 import './index.css'
 
-const Post = ({commonName, latinName, kingdom, family}) => {
+const Post = ({species}) => {
+  const [post, setPost] = useState(species);
+
+
   return (
     <div className="post">
-      <p className="post-commonName">{commonName}</p>
-      <p className="post-latinName">{latinName}</p>
-      <p className="post-kingdom">{kingdom}</p>
-      <p className="post-family">{family}</p>
+      <p className="post-commonName">{post.commonName}</p>
+      <p className="post-latinName">{post.latinName}</p>
+      <p className="post-kingdom">{post.kingdom}</p>
+      <p className="post-family">{post.family}</p>
 
     </div>
   );

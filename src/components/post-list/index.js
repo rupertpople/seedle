@@ -1,18 +1,23 @@
-import React from 'react';
-import Post from '../post';
-//import NomineesAPI from '../../hooks/use-nominees';
-//import './index.css';
+import React, { useState } from "react";
+import Post from '../post/index';
 
-const PostList = () => {
-  
-    return (
-      <div className="post-list">
-        {posts.map((post) => (
-          <Post key={`post-${post.id}`} {...post}/>
-        ))}
-      </div>
-    );
-  };
-  
-  export default PostList;
-  
+const PostList = (speciesInfo) => {
+  const [post, setPost] = useState(speciesInfo.speciesInfo[0])
+
+const species = post? (
+    <div className="post-list">
+      {post.map((post, index) => (
+       post = <Post key={index} species = {post}/>
+      ))}
+    </div>
+    ): null;
+
+return (
+  <div className="post-list">
+    {species}
+  </div>
+)
+}
+
+
+export default PostList;

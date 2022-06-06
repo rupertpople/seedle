@@ -111,3 +111,12 @@ button {
 .form-field:hover {
   background-color: rgba(8, 144, 22, 0.565);
 }
+
+.postlistComponent {
+  width: 1150px;
+  margin: auto;
+  margin-left: -300px;
+  margin-bottom: 100px;
+  display:block;
+  border-radius: 10px;
+}

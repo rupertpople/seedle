@@ -7,6 +7,7 @@ import usePlants from '../../hooks/plantAPI';
 import mergePlantsandBirds from '../../hooks/mergeBirdsandPlants';
 import addImageandDescription from '../../hooks/addImageandDescription';
 import PostList from '../post-list/index'
+import Post from '../post';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
@@ -36,7 +37,7 @@ const handleChange = (event) => {
   setPostcode(event.target.value);
 };
 
-const speciesDetails = plantsandbirds ? (
+const speciesDetails = plantsandbirds? (
   <div className="location">
     <PostList speciesInfo={plantsandbirds}/>
   </div>

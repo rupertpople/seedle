@@ -44,7 +44,7 @@ const handleChange = (event) => {
 const plantsandbirdsListNode = plantsandbirds? (
   <div className="location">
     {plantsandbirds[0].map((species, index)=>{
-      return <div key={index}>{species.name}</div>;
+      return <div key={index}>{species.image3}</div>;
     })}
   </div>
   ): null;

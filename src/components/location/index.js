@@ -11,13 +11,13 @@ import PostList from '../post-list/index'
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
   const [birds, setBirds] = useState(null);
-  const {  fetchGeolocation } = useGeolocation()
-  const {  fetchBirds } = useBirds()
+  const {  fetchGeolocation } = useGeolocation();
+  const {  fetchBirds } = useBirds();
   const [plants, setPlants] = useState(null);
-  const {  fetchPlants } = usePlants()
-  const { merge } = mergePlantsandBirds()
-  const [plantsandbirds, setPlantsandBirds] = useState(null)
-  const { addDescriptionandImage } = addImageandDescription()
+  const {  fetchPlants } = usePlants();
+  const { merge } = mergePlantsandBirds();
+  const [plantsandbirds, setPlantsandBirds] = useState(null);
+  const { addDescriptionandImage } = addImageandDescription();
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
@@ -36,13 +36,11 @@ const handleChange = (event) => {
   setPostcode(event.target.value);
 };
 
-// const plantsandbirdsListNode = plantsandbirds? (
-//   <div className="location">
-//     {plantsandbirds[0].map((species, index)=>{
-//       return <div key={index}>{species.commonName}</div>;
-//     })}
-//   </div>
-//   ): null;
+const speciesDetails = plantsandbirds? (
+  <div className="location">
+    <PostList speciesInfo={plantsandbirds}/>
+  </div>
+  ): null;
 
   return (
     <div className="location">
@@ -62,11 +60,9 @@ const handleChange = (event) => {
           Search
         </button>
       </form>
-      {/* {console.log(plantsandbirds)} */}
-      <PostList speciesInfo={plantsandbirds}/>
+      {speciesDetails}
     </div>
   );
 }
 
 export default Location;
-

@@ -4,10 +4,11 @@ import Location from '../location';
 
 const PostList = (speciesInfo) => {
 
+  const test = console.log(speciesInfo)
+  
   return (
-    {speciesInfo}
+    <div className="Test">{test}</div>
   );
 };
-  
-  export default PostList;
-  
+
+export default PostList;

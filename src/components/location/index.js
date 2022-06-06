@@ -1,20 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import './index.css'
-import { useState } from "react";
 import useGeolocation from '../../hooks/geocodingAPI';
 import useBirds from '../../hooks/birdAPI';
 import usePlants from '../../hooks/plantAPI';
 import mergePlantsandBirds from '../../hooks/mergeBirdsandPlants';
 import addImageandDescription from '../../hooks/addImageandDescription';
 import PostList from '../post-list/index'
-import Post from '../post';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
-  const [birds, setBirds] = useState(null);
   const {  fetchGeolocation } = useGeolocation();
   const {  fetchBirds } = useBirds();
-  const [plants, setPlants] = useState(null);
   const {  fetchPlants } = usePlants();
   const { merge } = mergePlantsandBirds();
   const [plantsandbirds, setPlantsandBirds] = useState(null);
@@ -25,9 +21,7 @@ const handleSubmit = async (event) => {
 
   const geolocation = await fetchGeolocation(postcode);
   const birds = await fetchBirds(geolocation);
-  setBirds(birds);
   const plants = await fetchPlants(geolocation);
-  setPlants(plants);
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
@@ -38,7 +32,7 @@ const handleChange = (event) => {
 };
 
 const speciesDetails = plantsandbirds? (
-  <div className="location">
+  <div className="postlistComponent">
     <PostList speciesInfo={plantsandbirds}/>
   </div>
   ): null;

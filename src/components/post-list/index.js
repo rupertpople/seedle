@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Post from '../post';
-import Location from '../location';
+import './index.css'
 
 const PostList = (speciesInfo) => {
   const [array, setArray] = useState(speciesInfo.speciesInfo[0]);
@@ -8,7 +7,7 @@ const PostList = (speciesInfo) => {
   return (
     <div className="post-list">
       {array.map((species, index)=>{
-        return <div key={index}>{species.commonName}</div>;
+        return <div key={index}><p> {species.commonName} </p><p> {species.latinName} </p></div>;
       })}
     </div>
   );

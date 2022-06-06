@@ -37,7 +37,7 @@ const handleChange = (event) => {
 };
 
 const speciesDetails = plantsandbirds ? (
-  <div className="location">
+  <div className="PostListComponent">
     <PostList speciesInfo={plantsandbirds}/>
   </div>
   ): null;

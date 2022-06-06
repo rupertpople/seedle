@@ -6,6 +6,7 @@ import useBirds from '../../hooks/birdAPI';
 import usePlants from '../../hooks/plantAPI';
 import mergePlantsandBirds from '../../hooks/mergeBirdsandPlants';
 import addImageandDescription from '../../hooks/addImageandDescription';
+import PostList from '../post-list/index'
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
@@ -35,19 +36,19 @@ const handleChange = (event) => {
   setPostcode(event.target.value);
 };
 
-const plantsandbirdsListNode = plantsandbirds? (
-  <div className="location">
-    {plantsandbirds[0].map((species, index)=>{
-      return <div key={index}>{species.name}</div>;
-    })}
-  </div>
-  ): null;
+// const plantsandbirdsListNode = plantsandbirds? (
+//   <div className="location">
+//     {plantsandbirds[0].map((species, index)=>{
+//       return <div key={index}>{species.commonName}</div>;
+//     })}
+//   </div>
+//   ): null;
 
   return (
     <div className="location">
       <form onSubmit={handleSubmit} className="location-form">
         <h3>Your Online Local Species Explorer </h3>
-        <div class="to-right"></div><div class="to-left"></div>
+        <div className="to-right"></div><div className="to-left"></div>
         <input
           id="postcode"
           className="postcode-field"
@@ -61,7 +62,8 @@ const plantsandbirdsListNode = plantsandbirds? (
           Search
         </button>
       </form>
-      {plantsandbirdsListNode}
+      {/* {console.log(plantsandbirds)} */}
+      <PostList speciesInfo={plantsandbirds}/>
     </div>
   );
 }

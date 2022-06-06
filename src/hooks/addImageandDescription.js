@@ -4,8 +4,6 @@ import WikipediaDescriptionAPI from "../model/wikipediaDescriptionAPI";
 import WikipediaDescriptionModel from "../model/wikipediaDescriptionModel";
 import WikipediaImageAPI from "../model/wikipediaImageAPI";
 import WikipediaImageModel from "../model/wikipediaImageModel";
-// import PixabayImageAPI from "../model/pixabayImageAPI";
-// import PixabayImageModel from "../model/pixabayImageModel";
 
 const addWikiDescriptionandImage = () => {
     
@@ -21,19 +19,25 @@ const addWikiDescriptionandImage = () => {
         return(res);
     }
 
-    // const fetchPixabayImage = async (species) => {
-    //     const images = new PixabayImageModel (new PixabayImageAPI(species))
-    //     const res = await images.getImage();
-    //     return(res);
-    // }
-
     const addDescriptionandImage = async (birdsandplants) => {
+
         const array = await Promise.all(birdsandplants.map(async species => ({
             commonName: species.commonName, latinName: species.latinName, kingdom: species.kingdom, family: species.family, count: species.count,
-            image: await fetchWikiImage(species.commonName.toLowerCase()), description: await fetchDescription(species.commonName.toLowerCase())})))
-        return[array]
-    }
+            description: await fetchDescription(species.commonName.toLowerCase())})));
 
+        const images = await Promise.all(birdsandplants.map(async species => ({
+            image: await fetchWikiImage(species.commonName.toLowerCase()), image2: await fetchWikiImage(species.latinName.toLowerCase())})));
+
+        const map = (a,b) => a.map((x,i) => [x, b[i]])
+  
+        const result = await Promise.all(map(array, images).map(o => Object.assign({}, ...o)))
+        const filteredresults = await Promise.all(result.filter(function (species) {
+            return species.image != undefined ||
+                    species.image2 != undefined    
+          }));
+        return[filteredresults]
+        
+    }
     
     
     return {

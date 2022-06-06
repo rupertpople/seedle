@@ -7,7 +7,6 @@ const Post = ({species}) => {
 
   return (
     <div className="post">
-      <p> test </p>
       <p className="post-commonName">{post.commonName}</p>
       <p className="post-latinName">{post.latinName}</p>
       <p className="post-kingdom">{post.kingdom}</p>

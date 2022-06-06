@@ -36,7 +36,7 @@ const handleChange = (event) => {
   setPostcode(event.target.value);
 };
 
-const speciesDetails = plantsandbirds? (
+const speciesDetails = plantsandbirds ? (
   <div className="location">
     <PostList speciesInfo={plantsandbirds}/>
   </div>

@@ -9,7 +9,7 @@ body {
   display:block;
   background-color:rgba(0,0,0,0.5);
   bottom: 100px;
-  border-radius:5px;
+  border-radius: 10px;
   padding: 1px;
 }
 
@@ -19,7 +19,8 @@ body {
   margin: auto;
   margin-bottom: 100px;
   display:block;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
 }
 
 h3 {
@@ -110,16 +111,6 @@ button {
 
 .form-field:hover {
   background-color: rgba(8, 144, 22, 0.565);
-}
-
-
-.postlistComponent {
-  width: 1150px;
-  margin: auto;
-  margin-left: -300px;
-  margin-bottom: 100px;
-  display:block;
-  border-radius: 10px;
 }
 
 .message {

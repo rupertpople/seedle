@@ -4,19 +4,26 @@ import './index.css'
 const Post = ({species}) => {
 
   return (
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="right-items">
-            <p className="post-commonName">{species.commonName}</p>
-            <p className="post-latinName">{species.latinName}</p>
-            <p className="post-kingdom">{species.kingdom}</p>
-            <p className="post-family">{species.family}</p>
+    <div className="wrapper">
+      <div className="cols">
+        <div className="col" ontouchstart="this.classList.toggle('hover');">
+          <div className="container">
+            <div className="front" style={{ backgroundImage: `url(${species.image || species.image2})` }}>
+              <div className="inner">
+                <p>{species.commonName}</p>
+                <span>  {species.latinName}   </span>
+                <span className="dot"></span>
+                <span>   {species.kingdom}   </span>
+                <span className="dot"></span>
+                <span>   {species.family}  </span>
+              </div>
+            </div>
+            <div className="back">
+              <div className="inner">
+                <p>{species.description}</p>
+              </div>
+            </div>
           </div>
-          <p className="post-image"><img src={species.image || species.image2} width="200px" alt="pic"></img></p>
-        </div>
-        <div class="flip-card-back">
-            <p className="post-description">{species.description}</p>
         </div>
       </div>
     </div>

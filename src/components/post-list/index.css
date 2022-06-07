@@ -1,7 +1,4 @@
-.post-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1300px;
-}
+/* .post-list {
+  margin-left: -300px;
+  margin-right: -800px;
+} */

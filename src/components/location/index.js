@@ -6,6 +6,8 @@ import usePlants from '../../hooks/plantAPI';
 import mergePlantsandBirds from '../../hooks/mergeBirdsandPlants';
 import addImageandDescription from '../../hooks/addImageandDescription';
 import PostList from '../post-list/index'
+import useMyGeoLocation from '../../hooks/useMyGeoLocation';
+import formatMyGeoLocation from '../../hooks/formatMyGeoLocation';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
@@ -16,6 +18,10 @@ const Location = () => {
   const [plantsandbirds, setPlantsandBirds] = useState(null);
   const { addDescriptionandImage } = addImageandDescription();
   const [ message, setMessage ] = useState("");
+  const myLocation = useMyGeoLocation();
+  const [ longitude, setLongitude ] = useState(null);
+  const [ latitude, setLatitude ] = useState(null);
+  const { formattedLocation } = formatMyGeoLocation();
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
@@ -27,6 +33,26 @@ const handleSubmit = async (event) => {
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
   setMessage(`Showing results for ${postcode}`);
+}
+
+const handleSubmitGeolocation = async (event) => { 
+  event.preventDefault();
+  const lat = JSON.stringify(myLocation.coordinates.lat)
+  const long = JSON.stringify(myLocation.coordinates.lng)
+  setLatitude(await formattedLocation(myLocation))
+  console.log(2)
+  console.log(latitude)
+  // const latfloat = latitude.toFixed(4)
+  // const lngfloat = longitude.toFixed(4)
+  // console.log(latfloat)
+  const birds = await fetchBirds(geolocation);
+  const plants = await fetchPlants(geolocation);
+  const species = await merge(birds,plants);
+  const species2 = await addDescriptionandImage(species);
+  setPlantsandBirds(species2);
+
+  {myLocation.loaded ? JSON.stringify(myLocation) : "Enable access to use location."}
+
 }
 
 const handleChange = (event) => {
@@ -41,7 +67,7 @@ const speciesDetails = plantsandbirds? (
 
   return (
     <div className="location">
-      <form onSubmit={handleSubmit} className="location-form">
+      <form className="location-form">
         <h3>Your Online Local Species Explorer </h3>
         <div className="to-right"></div><div className="to-left"></div>
         <input
@@ -53,8 +79,11 @@ const speciesDetails = plantsandbirds? (
           postcode="postcode"
           onChange={handleChange}
         />
-        <button className="form-field" type="submit">
+        <button onClick={handleSubmit} className="form-field" type="submit">
           Search
+        </button>
+        <button onClick={handleSubmitGeolocation} className="myLocation-form" type="submit">
+          Use my location
         </button>
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>

@@ -1,8 +1,9 @@
 import fetch from "node-fetch";
 
 class BirdAPI {
-    constructor(geolocation) {
+    constructor(geolocation, radius = 10) {
         this.geolocation = geolocation
+        this.radius = radius
     }
 
     fetchBirds(query = this.geolocation) {

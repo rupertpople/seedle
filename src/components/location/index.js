@@ -44,11 +44,11 @@ const handleChange = (event) => {
 const handleChangePlants = async (event) => { 
   event.preventDefault();
   if (checked === false){
-    setPlantsandBirds(birds)
+    setPlantsandBirds(plants)
     setChecked(true)
   } else if (checked === true) {
-    this.setPlantsandBirds(plantsandbirds)
-    this.setChecked(false)
+    setPlantsandBirds(plantsandbirds)
+    setChecked(false)
   }
 }
   

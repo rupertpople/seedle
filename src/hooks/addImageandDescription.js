@@ -33,7 +33,17 @@ const addWikiDescriptionandImage = () => {
             return species.image != undefined ||
                     species.image2 != undefined    
           }));
-        return[filteredresults]
+
+        const editedresults = []
+        await Promise.all(filteredresults.filter(species => {
+            Object.keys(species).forEach((key) => {
+                if (species[key] === undefined) {
+                  delete species[key];
+                  editedresults.push(species)
+                }
+              })}))
+        
+        return[editedresults]
         
     }
     

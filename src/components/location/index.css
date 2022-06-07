@@ -4,7 +4,7 @@ body {
 
 .location {
   width:550px;
-  height:240px;
+  height:280px;
   margin: auto;
   display:block;
   background-color:rgba(0,0,0,0.5);
@@ -112,6 +112,7 @@ button {
   background-color: rgba(8, 144, 22, 0.565);
 }
 
+
 .postlistComponent {
   width: 1150px;
   margin: auto;
@@ -119,4 +120,14 @@ button {
   margin-bottom: 100px;
   display:block;
   border-radius: 10px;
+}
+
+.message {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  margin: auto;
+  position: center;
+  text-align: center;
+  padding-top: 10px;
+  font-style:bold
 }

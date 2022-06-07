@@ -8,6 +8,7 @@ import addImageandDescription from '../../hooks/addImageandDescription';
 import PostList from '../post-list/index'
 import useMyGeoLocation from '../../hooks/useMyGeoLocation';
 import formatMyGeoLocation from '../../hooks/formatMyGeoLocation';
+import BackToTopButton from '../back-to-top-button';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
@@ -57,6 +58,7 @@ const handleRadius = (event) => {
 const speciesDetails = plantsandbirds? (
   <div className="postlistComponent">
     <PostList speciesInfo={plantsandbirds}/>
+    <BackToTopButton/>
   </div>
   ): null;
 

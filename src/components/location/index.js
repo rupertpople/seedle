@@ -11,6 +11,7 @@ import formatMyGeoLocation from '../../hooks/formatMyGeoLocation';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
+  const [ radius, setRadius ] = useState()
   const {  fetchGeolocation } = useGeolocation();
   const {  fetchBirds } = useBirds();
   const {  fetchPlants } = usePlants();
@@ -25,28 +26,32 @@ const Location = () => {
 const handleSubmit = async (event) => { 
   event.preventDefault();
   const geolocation = await fetchGeolocation(postcode);
-  const birds = await fetchBirds(geolocation);
-  const plants = await fetchPlants(geolocation);
+  const birds = await fetchBirds(geolocation, radius);
+  const plants = await fetchPlants(geolocation, radius);
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
-  setMessage(`Showing results for ${postcode}`);
+  setMessage(`Showing results within ${radius}km of ${postcode}`);
 }
 
 const handleSubmitGeolocation = async (event) => { 
   event.preventDefault();
   const location = await formattedLocation(myLocation)
-  const birds = await fetchBirds(location);
-  const plants = await fetchPlants(location);
+  const birds = await fetchBirds(location, radius);
+  const plants = await fetchPlants(location, radius);
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
   console.log(location)
-  setMessage(`Showing results for your location`);
+  setMessage(`Showing results within ${radius}km of your location`);
 }
 
 const handleChange = (event) => {
   setPostcode(event.target.value);
+};
+
+const handleRadius = (event) => {
+  setRadius(event.target.value);
 };
  
 const speciesDetails = plantsandbirds? (
@@ -68,6 +73,15 @@ const speciesDetails = plantsandbirds? (
           placeholder="Enter postcode here..."
           postcode="postcode"
           onChange={handleChange}
+        />
+        <input
+          id="radius"
+          className="radius-field"
+          type="text"
+          value={radius}
+          placeholder="Specify search area in kilometres..."
+          postcode="radius"
+          onChange={handleRadius}
         />
         <button onClick={handleSubmit} className="form-field" type="submit">
           Search

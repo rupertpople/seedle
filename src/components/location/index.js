@@ -19,16 +19,20 @@ const Location = () => {
   const [filter, setFilter] = useState("")
   const [birds, setBirds] = useState("");
   const [plants, setPlants] = useState("");
+  const [checked, setChecked] = useState(false)
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
-
   const geolocation = await fetchGeolocation(postcode);
   const birds = await fetchBirds(geolocation);
   const plants = await fetchPlants(geolocation);
+  const birdsDisplay = await addDescriptionandImage(birds)
+  const plantsDisplay = await addDescriptionandImage(plants)
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
+  setBirds(birdsDisplay)
+  setPlants(plantsDisplay)
   setMessage(`Showing results for ${postcode}`);
   setFilter(true)
 }
@@ -36,6 +40,23 @@ const handleSubmit = async (event) => {
 const handleChange = (event) => {
   setPostcode(event.target.value);
 };
+
+const handleChangePlants = async (event) => { 
+  event.preventDefault();
+  if (checked === false){
+    setPlantsandBirds(birds)
+    setChecked(true)
+  } else if (checked === true) {
+    this.setPlantsandBirds(plantsandbirds)
+    this.setChecked(false)
+  }
+}
+  
+
+const handleChangeBirds= (event) => { 
+  setPlantsandBirds(birds);
+  console.log(plantsandbirds)
+}
  
 const speciesDetails = plantsandbirds? (
   <div className="postlistComponent">
@@ -43,33 +64,6 @@ const speciesDetails = plantsandbirds? (
   </div>
   ): null;
 
-const plantsDetails = plants? (
-  <div className="postlistComponent">
-    <PostList speciesInfo={plants}/>
-  </div>
-  ): null;
-
-const birdsDetails = birds? (
-  <div className="postlistComponent">
-      <PostList speciesInfo={birds}/>
-  </div>
-  ): null;
-
-
-const handleSubmitBirds = async (event) => { 
-  event.preventDefault();
-  plantsandbirds.filter(birds => birds.kingdom.equals('Animalia'))
-  setPlantsandBirds(null);
-  setBirds(plantsandbirds)
-}
-
-const handleSubmitPlants = async (event) => { 
-  event.preventDefault();
-  plantsandbirds.filter(plants => plants.kingdom = ('Plantae'))
-  setPlantsandBirds(null);
-  setPlants(plantsandbirds.filter(plants => plants.kingdom = ('Plantae')))
-  console.log(plantsandbirds)
-}
 
   return (
     <div className="location">
@@ -93,15 +87,15 @@ const handleSubmitPlants = async (event) => {
 
       <div className='filter'>
         <div className="filterbirds">{filter ? <div className="topping">
-          <input type="checkbox" id="filterbirds" name="filterbirds" value="filterbirds" onChange={handleSubmitBirds} /> Filter by Birds
+          <input type="checkbox" id="filterbirds" name="filterbirds" value="filterbirds" onChange={handleChangeBirds}/> View Birds
         </div> : null}</div>
         <div className="filterplants">{filter ? <div className="topping">
-          <input type="checkbox" id="filterplants" name="filterplants" value="filterplants" onChange={handleSubmitPlants}/> Filter by Plants
-        </div> : null}</div> </div>
+          <input type="checkbox" id="filterplants" name="filterplants" onChange={handleChangePlants}
+          /> View Plants
+        </div> : null}</div></div>
 
         {speciesDetails}
-        {plantsDetails}
-        {birdsDetails}
+      
     </div>
   );
 }

@@ -19,9 +19,8 @@ const Location = () => {
   const { addDescriptionandImage } = addImageandDescription();
   const [ message, setMessage ] = useState("");
   const myLocation = useMyGeoLocation();
-  const [ longitude, setLongitude ] = useState(null);
-  const [ latitude, setLatitude ] = useState(null);
   const { formattedLocation } = formatMyGeoLocation();
+  const [geolocation, setGeolocation] = useState(null)
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
@@ -37,22 +36,12 @@ const handleSubmit = async (event) => {
 
 const handleSubmitGeolocation = async (event) => { 
   event.preventDefault();
-  const lat = JSON.stringify(myLocation.coordinates.lat)
-  const long = JSON.stringify(myLocation.coordinates.lng)
-  setLatitude(await formattedLocation(myLocation))
-  console.log(2)
-  console.log(latitude)
-  // const latfloat = latitude.toFixed(4)
-  // const lngfloat = longitude.toFixed(4)
-  // console.log(latfloat)
-  const birds = await fetchBirds(geolocation);
-  const plants = await fetchPlants(geolocation);
+  const location = await formattedLocation(myLocation)
+  const birds = await fetchBirds(location);
+  const plants = await fetchPlants(location);
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
-
-  {myLocation.loaded ? JSON.stringify(myLocation) : "Enable access to use location."}
-
 }
 
 const handleChange = (event) => {

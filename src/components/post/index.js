@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import './index.css'
 
 const Post = ({species}) => {
-  const [post, setPost] = useState(species);
-
 
   return (
     <div className="post">

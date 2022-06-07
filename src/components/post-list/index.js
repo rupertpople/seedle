@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Post from '../post/index';
+import './index.css'
 
 const PostList = (speciesInfo) => {
-  const [post, setPost] = useState(speciesInfo.speciesInfo[0])
+  const post = speciesInfo.speciesInfo[0]
 
 const species = post? (
     <div className="post-list">

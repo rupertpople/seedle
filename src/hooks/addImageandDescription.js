@@ -1,5 +1,3 @@
-import React from "react";
-import { useState } from 'react';
 import WikipediaDescriptionAPI from "../model/wikipediaDescriptionAPI";
 import WikipediaDescriptionModel from "../model/wikipediaDescriptionModel";
 import WikipediaImageAPI from "../model/wikipediaImageAPI";

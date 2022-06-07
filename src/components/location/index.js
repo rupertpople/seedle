@@ -24,7 +24,6 @@ const Location = () => {
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
-
   const geolocation = await fetchGeolocation(postcode);
   const birds = await fetchBirds(geolocation);
   const plants = await fetchPlants(geolocation);
@@ -42,6 +41,8 @@ const handleSubmitGeolocation = async (event) => {
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
+  console.log(location)
+  setMessage(`Showing results for your location`);
 }
 
 const handleChange = (event) => {

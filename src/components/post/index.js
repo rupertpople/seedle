@@ -5,6 +5,7 @@ const Post = ({species}) => {
 
   function shortenDescription(species) {
 
+    console.log(species.description)
     const description = species.description.substring(0,640)
     const lastIndexOfSpace = description.lastIndexOf(' ');
   
@@ -23,6 +24,7 @@ const Post = ({species}) => {
       <p className="post-kingdom">{species.kingdom}</p>
       <p className="post-family">{species.family}</p>
       <p className="post-description">{shortenDescription(species)}</p>
+      {/* <p className="post-description">{species.description}</p> */}
       <p className="post-image">{species.image || species.image2}</p>
       <p className="post-link">{species.wikiLink || species.wikiLink2}</p>
 

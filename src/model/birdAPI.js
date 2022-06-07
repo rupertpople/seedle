@@ -6,7 +6,7 @@ class BirdAPI {
     }
 
     fetchBirds(query = this.geolocation) {
-        return fetch(`https://records-ws.nbnatlas.org/explore/group/Birds?${query}&radius=5.0&start=0&pageSize=20`)
+        return fetch(`https://records-ws.nbnatlas.org/explore/group/Birds?${query}&radius=5.0&start=0&pageSize=1`) // <-- CHANGE THIS BACK
         .then((response) => response.json())
     }
 

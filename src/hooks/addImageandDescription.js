@@ -21,8 +21,8 @@ const addWikiDescriptionandImage = () => {
 
         const array = await Promise.all(birdsandplants.map(async species => ({
             commonName: species.commonName, latinName: species.latinName, kingdom: species.kingdom, family: species.family, count: species.count,
-            description: await fetchDescription(species.commonName.toLowerCase()), wikiLink: `https://en.wikipedia.org/wiki/${species.commonName}`, wikiLink2: `https://en.wikipedia.org/wiki/${species.latinName}`})));
-            
+            description: await fetchDescription((species.commonName.toLowerCase())), wikiLink: `https://en.wikipedia.org/wiki/${species.commonName}`, wikiLink2: `https://en.wikipedia.org/wiki/${species.latinName}`})));
+
         const images = await Promise.all(birdsandplants.map(async species => ({
             image: await fetchWikiImage(species.commonName.toLowerCase()), image2: await fetchWikiImage(species.latinName.toLowerCase())})));
 
@@ -34,8 +34,12 @@ const addWikiDescriptionandImage = () => {
                     species.image2 != undefined    
           }));
 
+        const filteredresults2 = await Promise.all(filteredresults.filter(function (species) {
+            return species.description != undefined 
+          }));
+
         const editedresults = []
-        await Promise.all(filteredresults.filter(species => {
+        await Promise.all(filteredresults2.filter(species => {
             Object.keys(species).forEach((key) => {
                 if (species[key] === undefined) {
                   delete species[key];

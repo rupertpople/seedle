@@ -5,12 +5,12 @@ const Post = ({species}) => {
 
   return (
     <div className="post">
-      <p className="post-commonName">{post.commonName}</p>
-      <p className="post-latinName">{post.latinName}</p>
-      <p className="post-kingdom">{post.kingdom}</p>
-      <p className="post-family">{post.family}</p>
-      <p className="post-description">{post.description}</p>
-      <p className="post-image">{post.image || post.image2}</p>
+      <p className="post-commonName">{species.commonName}</p>
+      <p className="post-latinName">{species.latinName}</p>
+      <p className="post-kingdom">{species.kingdom}</p>
+      <p className="post-family">{species.family}</p>
+      <p className="post-description">{species.description}</p>
+      <p className="post-image">{species.image || species.image2}</p>
     </div>
   );
 };

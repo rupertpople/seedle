@@ -27,7 +27,6 @@ const Post = ({species}) => {
       {/* <p className="post-description">{species.description}</p> */}
       <p className="post-image">{species.image || species.image2}</p>
       <p className="post-link">{species.wikiLink || species.wikiLink2}</p>
-
     </div>
   );
 };

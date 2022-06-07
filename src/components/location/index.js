@@ -16,6 +16,9 @@ const Location = () => {
   const [plantsandbirds, setPlantsandBirds] = useState(null);
   const { addDescriptionandImage } = addImageandDescription();
   const [ message, setMessage ] = useState("");
+  const [filter, setFilter] = useState("")
+  const [birds, setBirds] = useState("");
+  const [plants, setPlants] = useState("");
 
 const handleSubmit = async (event) => { 
   event.preventDefault();
@@ -27,6 +30,7 @@ const handleSubmit = async (event) => {
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
   setMessage(`Showing results for ${postcode}`);
+  setFilter(true)
 }
 
 const handleChange = (event) => {
@@ -38,6 +42,34 @@ const speciesDetails = plantsandbirds? (
     <PostList speciesInfo={plantsandbirds}/>
   </div>
   ): null;
+
+const plantsDetails = plants? (
+  <div className="postlistComponent">
+    <PostList speciesInfo={plants}/>
+  </div>
+  ): null;
+
+const birdsDetails = birds? (
+  <div className="postlistComponent">
+      <PostList speciesInfo={birds}/>
+  </div>
+  ): null;
+
+
+const handleSubmitBirds = async (event) => { 
+  event.preventDefault();
+  plantsandbirds.filter(birds => birds.kingdom.equals('Animalia'))
+  setPlantsandBirds(null);
+  setBirds(plantsandbirds)
+}
+
+const handleSubmitPlants = async (event) => { 
+  event.preventDefault();
+  plantsandbirds.filter(plants => plants.kingdom = ('Plantae'))
+  setPlantsandBirds(null);
+  setPlants(plantsandbirds.filter(plants => plants.kingdom = ('Plantae')))
+  console.log(plantsandbirds)
+}
 
   return (
     <div className="location">
@@ -58,7 +90,18 @@ const speciesDetails = plantsandbirds? (
         </button>
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
-      {speciesDetails}
+
+      <div className='filter'>
+        <div className="filterbirds">{filter ? <div className="topping">
+          <input type="checkbox" id="filterbirds" name="filterbirds" value="filterbirds" onChange={handleSubmitBirds} /> Filter by Birds
+        </div> : null}</div>
+        <div className="filterplants">{filter ? <div className="topping">
+          <input type="checkbox" id="filterplants" name="filterplants" value="filterplants" onChange={handleSubmitPlants}/> Filter by Plants
+        </div> : null}</div> </div>
+
+        {speciesDetails}
+        {plantsDetails}
+        {birdsDetails}
     </div>
   );
 }

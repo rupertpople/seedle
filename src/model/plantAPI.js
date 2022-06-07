@@ -6,7 +6,7 @@ class PlantAPI {
     }
 
     fetchPlants(query = this.geolocation) {
-        return fetch(`https://records-ws.nbnatlas.org/explore/group/Plants?${query}&radius=5.0&start=0&pageSize=20`)
+        return fetch(`https://records-ws.nbnatlas.org/explore/group/Plants?${query}&radius=5.0&start=0&pageSize=1`)
         .then((response) => response.json())
     }
 

@@ -12,7 +12,7 @@ import BackToTopButton from '../back-to-top-button';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
-  const [ radius, setRadius ] = useState()
+  const [ radius, setRadius ] = useState(10)
   const {  fetchGeolocation } = useGeolocation();
   const {  fetchBirds } = useBirds();
   const {  fetchPlants } = usePlants();
@@ -32,7 +32,7 @@ const handleSubmit = async (event) => {
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
-  setMessage(`Showing results within ${radius}km of ${postcode}`);
+  setMessage(`Showing results within ${radius}km of ${postcode.toUpperCase()}`);
 }
 
 const handleSubmitGeolocation = async (event) => { 
@@ -43,7 +43,6 @@ const handleSubmitGeolocation = async (event) => {
   const species = await merge(birds,plants);
   const species2 = await addDescriptionandImage(species);
   setPlantsandBirds(species2);
-  console.log(location)
   setMessage(`Showing results within ${radius}km of your location`);
 }
 
@@ -52,7 +51,7 @@ const handleChange = (event) => {
 };
 
 const handleRadius = (event) => {
-  setRadius(event.target.value);
+    setRadius(event.target.value);
 };
  
 const speciesDetails = plantsandbirds? (

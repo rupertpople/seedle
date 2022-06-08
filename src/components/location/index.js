@@ -76,6 +76,7 @@ const speciesDetails = plantsandbirds? (
           postcode="postcode"
           onChange={handleChange}
         />
+        <div className="area-search">
         <label for="radius">Area size</label>
         <input
           id="radius"
@@ -85,13 +86,15 @@ const speciesDetails = plantsandbirds? (
           placeholder="Specify search area in kilometres..."
           postcode="radius"
           onChange={handleRadius}
-        />
+        /></div>
+        <div className="search-components">
         <button onClick={handleSubmit} className="form-field" type="submit">
           Search
         </button>
         <button onClick={handleSubmitGeolocation} className="myLocation-form" type="submit">
-          <img src="yourlocation.png" width="20"></img>
+          <img src="yourlocation.png" width="30" className="location-image"></img>
         </button>
+        </div>
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
       {speciesDetails}

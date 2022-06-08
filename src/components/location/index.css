@@ -98,6 +98,7 @@ input {
 
 .form-field {
   cursor: pointer; /* Mouse pointer on hover */
+  width: 80%;
 }
 
 .form-field:hover {
@@ -139,5 +140,16 @@ label {
   cursor: pointer;
   background: none;
 	border: none;
-	padding: 0;
+  position: absolute
+}
+
+.location-image{
+  padding-left: 30px;
+  padding-top: 8px;
+  position: relative;
+}
+
+.search-components{
+  margin: auto;
+  padding-top:10px
 }

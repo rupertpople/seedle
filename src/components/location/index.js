@@ -87,7 +87,11 @@ const speciesDetails = plantsandbirds? (
           placeholder="Specify search area in kilometres..."
           postcode="radius"
           onChange={handleRadius}
-        /></div>
+        />
+        <div className="km">
+          <p>Km</p>
+        </div>
+          </div>
         <div className="search-components">
         <button onClick={handleSubmit} className="form-field" type="submit">
           Search

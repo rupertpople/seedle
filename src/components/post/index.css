@@ -27,7 +27,7 @@
 	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
 	-webkit-backface-visibility: hidden;
 	        backface-visibility: hidden;
-	text-align: center;
+  text-align: center;
 	height: 300px;
   width: 580px;
 	color: #fff;
@@ -36,7 +36,7 @@
 
 .back{
   background: #00010253;
-  background: -webkit-radial-gradient(circle, rgb(4, 9, 3) 30%, rgba(0,0,0,0.5) 100%, rgba(0,0,0,0.506061799719888))
+  background: -webkit-radial-gradient(circle, rgb(4, 9, 3) 30%, rgba(0,0,0,0.5) 100%, rgba(0,0,0,0.506061799719888));
 }
 
 .front:after{
@@ -170,4 +170,29 @@
 
 .count {
 	text-align: center;
+}
+
+.back .inner button {
+  width:100%;
+  background-color:rgba(74,129,51,0.4);
+  border:2px solid #6FC149;
+  color:#fff;
+  border-radius:5px;
+  height:40px;
+  text-transform:uppercase;
+  text-align:'center';
+  font-size:13px;
+  cursor:pointer;
+  transition:all 0.3s;
+  margin-top: 10px;
+}
+
+.read-more{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back .inner {
+  text-align: justify;
 }

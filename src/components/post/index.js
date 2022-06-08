@@ -36,7 +36,11 @@ const Post = ({species}) => {
               <div className="inner">
               <p className="count"><span className="dot"></span>    Sightings reported in your area: {species.count}    <span className="dot"></span></p>
                 <p>{shortenDescription(species)}</p>
-                <p className="post-link">{species.wikiLink || species.wikiLink2}</p>
+                <div className="read-more" >
+                <a href={species.wikiLink || species.wikiLink2} target="_blank" rel="noreferrer">
+                  <button>Read More</button>
+                </a>
+                </div>
               </div>
             </div>
           </div>

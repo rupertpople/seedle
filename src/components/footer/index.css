@@ -1,0 +1,32 @@
+footer{
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(37, 45, 38, 0.565);
+    position: relative;
+    bottom: 0;
+    left: 10;
+    width: 100%;
+    text-align: center;
+  }
+
+  
+  .page-container {
+    column-count: 3;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align:center
+  }
+    
+  .content-wrap {
+    flex:1;
+  }
+
+  .col-sm{
+      text-align:center;
+      font-size: 15;
+  }
+
+  a:visited {
+    color: white;
+  }

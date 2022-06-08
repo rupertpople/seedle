@@ -66,7 +66,8 @@ const speciesDetails = plantsandbirds? (
       <form className="location-form">
         <h3>Your Online Local Species Explorer </h3>
         <div className="to-right"></div><div className="to-left"></div>
-        <label for="postcode">Postcode</label>
+        <div className="postcode-search">
+        <label for="postcode" className="postcode-text">Postcode:</label>
         <input
           id="postcode"
           className="postcode-field"
@@ -75,9 +76,9 @@ const speciesDetails = plantsandbirds? (
           placeholder="Enter postcode here..."
           postcode="postcode"
           onChange={handleChange}
-        />
+        /></div>
         <div className="area-search">
-        <label for="radius">Area size</label>
+        <label className="area-size-text" for="radius">Area size:</label>
         <input
           id="radius"
           className="radius-field"

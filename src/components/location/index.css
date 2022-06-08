@@ -151,5 +151,41 @@ label {
 
 .search-components{
   margin: auto;
-  padding-top:10px
+  padding-top:20px
+}
+
+.area-search{
+  margin: auto;
+  margin-bottom:15px;
+}
+
+.area-size-text{
+  text-align: left;
+  margin-top: 37px;
+  margin-left: 120px;
+  position: absolute;
+}
+
+.radius-field{
+  margin-left: 226px;
+  margin-top: 30px
+}
+
+.postcode-search{
+  margin: auto;
+  margin-top: 10px
+}
+
+.postcode-field{
+  margin-left: 226px;
+  width: 30%;
+  margin-top: 22px
+}
+
+.postcode-text{
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 120px;
+  position: absolute;
+  font-size: 18px;
 }

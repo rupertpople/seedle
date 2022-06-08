@@ -53,8 +53,9 @@ h3 {
 }
 
 input {
+  display: inline-block;
   border: 0px none;
-  width: 94%;
+  width: 40%;
   border-radius: 4px;
   height: 25px;
   margin-top: 10px;
@@ -64,7 +65,7 @@ input {
   color:#222;
 }
 
-button {
+.form-field {
   width:100%;
   background-color:rgba(74,129,51,0.4);
   border:2px solid #6FC149;
@@ -103,11 +104,6 @@ button {
   background-color: rgba(8, 144, 22, 0.565);
 }
 
-.myLocation-form:hover {
-  background-color: rgba(8, 144, 22, 0.565);
-}
-
-
 .postlistComponent {
   width: 1150px;
   margin: auto;
@@ -125,4 +121,23 @@ button {
   text-align: center;
   padding-top: 3px;
   font-style:bold
+}
+
+label {
+  width: 100%;
+  display: inline-block;
+  padding:0px 0px 2px 2px;
+  margin-top: 20px;
+  font-size:18px;
+}
+
+.radius-field{
+  width: 4%;
+}
+
+.myLocation-form{
+  cursor: pointer;
+  background: none;
+	border: none;
+	padding: 0;
 }

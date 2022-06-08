@@ -66,6 +66,7 @@ const speciesDetails = plantsandbirds? (
       <form className="location-form">
         <h3>Your Online Local Species Explorer </h3>
         <div className="to-right"></div><div className="to-left"></div>
+        <label for="postcode">Postcode</label>
         <input
           id="postcode"
           className="postcode-field"
@@ -75,6 +76,7 @@ const speciesDetails = plantsandbirds? (
           postcode="postcode"
           onChange={handleChange}
         />
+        <label for="radius">Area size</label>
         <input
           id="radius"
           className="radius-field"
@@ -88,7 +90,7 @@ const speciesDetails = plantsandbirds? (
           Search
         </button>
         <button onClick={handleSubmitGeolocation} className="myLocation-form" type="submit">
-          Use my location
+          <img src="yourlocation.png" width="20"></img>
         </button>
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>

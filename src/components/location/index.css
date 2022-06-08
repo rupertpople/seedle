@@ -4,20 +4,19 @@ body {
 
 .location {
   width:550px;
-  height:280px;
+  height:340px;
   margin: auto;
   display:block;
   background-color:rgba(0,0,0,0.5);
   bottom: 100px;
-  border-radius:5px;
+  border-radius: 10px;
   padding: 1px;
 }
 
 .location-form {
   width:480px;
-  height:180px;
+  height:200px;
   margin: auto;
-  margin-bottom: 100px;
   display:block;
   border-radius: 10px;
 }
@@ -40,7 +39,7 @@ h3 {
   border: 0px none;
   height: 3px;
   background-image: linear-gradient(to left,transparent, #F9E206);
-  top: 13px;
+  top: -6px;
 }
 
 .location-form div.to-left {
@@ -50,15 +49,7 @@ h3 {
   border: 0px none;
   height: 3px;
   background-image: linear-gradient(to right,transparent, #F9E206);
-  top: 10px;
-}
-
-label {
-  width: 100%;
-  display: inline-block;
-  padding:0px 0px 5px 5px;
-  margin-top: 20px;
-  font-size:18px;
+  top: -9px;
 }
 
 input {
@@ -66,7 +57,7 @@ input {
   width: 94%;
   border-radius: 4px;
   height: 25px;
-  margin-top: 45px;
+  margin-top: 10px;
   padding: 5px 3%;
   font-size:15px;
   font-family: inherit;
@@ -109,6 +100,10 @@ button {
 }
 
 .form-field:hover {
+  background-color: rgba(8, 144, 22, 0.565);
+}
+
+.myLocation-form:hover {
   background-color: rgba(8, 144, 22, 0.565);
 }
 

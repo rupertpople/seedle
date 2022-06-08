@@ -18,16 +18,29 @@ const Post = ({species}) => {
 
 
   return (
-    <div className="post">
-      <p className="post-commonName">{species.commonName}</p>
-      <p className="post-latinName">{species.latinName}</p>
-      <p className="post-kingdom">{species.kingdom}</p>
-      <p className="post-family">{species.family}</p>
-      <p className="post-description">{shortenDescription(species)}</p>
-      {/* <p className="post-description">{species.description}</p> */}
-      <p className="post-image">{species.image || species.image2}</p>
-      <p className="post-link">{species.wikiLink || species.wikiLink2}</p>
-
+    <div className="wrapper">
+      <div className="cols">
+        <div className="col">
+          <div className="container">
+            <div className="front" style={{ backgroundImage: `url(${species.image || species.image2})` }}>
+              <div className="inner">
+                <p>{species.commonName}</p>
+                <span>  {species.latinName}   </span>
+                <span className="dot"></span>
+                <span>   {species.kingdom}   </span>
+                <span className="dot"></span>
+                <span>   {species.family}  </span>
+              </div>
+            </div>
+            <div className="back">
+              <div className="inner">
+                <p>{shortenDescription(species)}</p>
+                <p className="post-link">{species.wikiLink || species.wikiLink2}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

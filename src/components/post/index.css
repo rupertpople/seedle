@@ -168,6 +168,10 @@
   margin-bottom: 4px;
 }
 
+.count {
+	text-align: center;
+}
+
 .back .inner button {
   width:100%;
   background-color:rgba(74,129,51,0.4);

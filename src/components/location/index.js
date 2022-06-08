@@ -9,6 +9,7 @@ import PostList from '../post-list/index'
 import useMyGeoLocation from '../../hooks/useMyGeoLocation';
 import formatMyGeoLocation from '../../hooks/formatMyGeoLocation';
 import BackToTopButton from '../back-to-top-button';
+import Footer from '../footer';
 
 const Location = () => {
   const [ postcode, setPostcode ] = useState("");
@@ -103,6 +104,9 @@ const speciesDetails = plantsandbirds? (
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
       {speciesDetails}
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 }

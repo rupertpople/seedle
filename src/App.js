@@ -1,8 +1,6 @@
 import './App.css';
 import React from 'react'
 import Location from './components/location';
-import BackToTopButton from './components/back-to-top-button';
-
 
 const App = () => {
   return (

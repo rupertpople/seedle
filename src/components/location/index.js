@@ -77,8 +77,8 @@ const speciesDetails = plantsandbirds? (
           postcode="postcode"
           onChange={handleChange}
         /></div>
-        <div className="area-search">
-        <label className="area-size-text" for="radius">Area size:</label>
+        <div className="area-search" >
+        <label className="area-size-text" for="radius" >Area size:</label>
         <input
           id="radius"
           className="radius-field"

@@ -151,12 +151,14 @@ label {
 
 .search-components{
   margin: auto;
-  padding-top:20px
+  padding-top:20px;
+  position: relative;
 }
 
 .area-search{
   margin: auto;
   margin-bottom:15px;
+  position: relative;
 }
 
 .area-size-text{
@@ -174,7 +176,8 @@ label {
 
 .postcode-search{
   margin: auto;
-  margin-top: 10px
+  margin-top: 10px;
+  position: relative;
 }
 
 .postcode-field{
@@ -184,6 +187,7 @@ label {
 }
 
 .postcode-text{
+  margin: auto;
   text-align: left;
   margin-top: 28px;
   margin-left: 120px;

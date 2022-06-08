@@ -167,3 +167,7 @@
   display: inline-block;
   margin-bottom: 4px;
 }
+
+.count {
+	text-align: center;
+}

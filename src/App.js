@@ -1,4 +1,5 @@
 import './App.css';
+/* eslint-disable */ 
 import React from 'react'
 import Location from './components/location';
 

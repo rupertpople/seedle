@@ -21,7 +21,7 @@ function BackToTopButton() {
         })
     }
 
-    return <div className="back-to-top">
+    return <div className="form-field">
         {BackToTopButton}
         <button nameClass='back-to-top-button'style = {{
             position: "fixed",

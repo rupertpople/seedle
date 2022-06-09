@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import "./index.css";
+
 
 function BackToTopButton() {
     const [BackToTopButton, setBackToTopButton] = useState(false);
@@ -21,19 +23,19 @@ function BackToTopButton() {
         })
     }
 
-    return <div className="form-field">
-        {BackToTopButton}
-        <button nameClass='back-to-top-button'style = {{
-            position: "fixed",
-            bottom: "50px",
-            right: "50px",
-            height: "50px",
-            width: "50px",
-            fontSize: "50px",
-        }}
-        onClick={scrollup}
-        >^</button>
-    </div>
+    return <div className="back-to-top">
+    {BackToTopButton}
+    <button className="button" style = {{
+        position: "fixed",
+        bottom: "50px",
+        right: "50px",
+        height: "50px",
+        width: "50px",
+        fontSize: "50px",
+    }}
+    onClick={scrollup}
+    >^</button>
+</div>
 }
 
 export default BackToTopButton;

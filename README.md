@@ -6,6 +6,8 @@
 -------
 <img src="https://i.imgur.com/FP5jGip.png" width="500" />
 
+-------
+
 # Our Team Charter...
 What do we expect from each other?
 - Support, patience, trust, openess, a positive environment, communication & to feel comfortable sharing issues
@@ -40,7 +42,12 @@ Must-Haves
 - Time commitment / breaks
 - Knowledge sharing
 
+-------
+
 # Our MVP...
+
+Our MVP was to have the basic functionality of a one page app\
+that could search for local plant & birds by pulling the relevant API data.
 
 <img src="https://i.imgur.com/750IoPH.png" width="350"/>
 
@@ -63,9 +70,9 @@ Must-Haves
 Planning & Implementation:
 --------
 
-- `The DOM modelling was done in `Excalidraw` to plan the layout of our one-page React app.`
+- `The DOM modelling was done using `Excalidraw` to plan the layout of our one-page React app.`
 
-<img src="https://i.imgur.com/XI6xsca.png" width="750">
+<img src="https://i.imgur.com/XI6xsca.png" width="600">
 
 --------
 
@@ -74,6 +81,8 @@ Planning & Implementation:
 `moving them along as they were implemented & completed.`
 
 <img src="https://i.imgur.com/WVWNJPg.jpg" width="750" />
+
+------
 
 Installation:
 ------
@@ -121,7 +130,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # `Images from our deployed and working app`
 
-<img src="https://i.imgur.com/aRlRqQ3.png" width="700" />
+<img src="https://i.imgur.com/aRlRqQ3.png" width="650" />
 
 ------
 

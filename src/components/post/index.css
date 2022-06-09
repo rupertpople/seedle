@@ -170,6 +170,10 @@
 
 .count {
 	text-align: center;
+  font-style: bold;
+  font-family: 'Montserrat';
+  font-size:20px;
+  font-weight: bold;
 }
 
 .back .inner button {

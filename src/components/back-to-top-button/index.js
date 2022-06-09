@@ -23,7 +23,7 @@ function BackToTopButton() {
 
     return <div className="back-to-top">
         {BackToTopButton}
-        <button style = {{
+        <button nameClass='back-to-top-button'style = {{
             position: "fixed",
             bottom: "50px",
             right: "50px",

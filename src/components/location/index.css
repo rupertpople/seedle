@@ -4,7 +4,7 @@ body {
 
 .location {
   width:550px;
-  height:340px;
+  height:342px;
   margin: auto;
   display:block;
   background-color:rgba(0,0,0,0.5);
@@ -120,7 +120,7 @@ input {
   margin: auto;
   position: center;
   text-align: center;
-  padding-top: 3px;
+  padding-top: 0px;
   font-style:bold
 }
 
@@ -176,7 +176,7 @@ label {
 
 .postcode-search{
   margin: auto;
-  margin-top: 10px
+  margin-top: 10px;
   position: relative;
 }
 

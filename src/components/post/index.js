@@ -6,7 +6,7 @@ const Post = ({species}) => {
   function shortenDescription(species) {
 
     console.log(species.description)
-    const description = species.description.substring(0,640)
+    const description = species.description.substring(0,450)
     const lastIndexOfSpace = description.lastIndexOf(' ');
   
     if (lastIndexOfSpace === -1) {

@@ -39,7 +39,7 @@ h3 {
   border: 0px none;
   height: 3px;
   background-image: linear-gradient(to left,transparent, #F9E206);
-  top: -6px;
+  top: -0px;
 }
 
 .location-form div.to-left {
@@ -49,7 +49,7 @@ h3 {
   border: 0px none;
   height: 3px;
   background-image: linear-gradient(to right,transparent, #F9E206);
-  top: -9px;
+  top: -3px;
 }
 
 input {
@@ -66,7 +66,7 @@ input {
 }
 
 .form-field {
-  width:100%;
+  width: 50%;
   background-color:rgba(74,129,51,0.4);
   border:2px solid #6FC149;
   color:#fff;
@@ -76,7 +76,10 @@ input {
   font-size:19px;
   cursor:pointer;
   transition:all 0.3s;
-  margin-top: 10px;
+  margin-top: 8px;
+  margin-left: 120px;
+  position: center;
+  text-align: center;
 }
 
 .path-moving,
@@ -96,11 +99,6 @@ input {
     stroke-dashoffset: -32;
 }
 
-.form-field {
-  cursor: pointer; /* Mouse pointer on hover */
-  width: 80%;
-}
-
 .form-field:hover {
   background-color: rgba(8, 144, 22, 0.565);
 }
@@ -118,10 +116,9 @@ input {
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   margin: auto;
-  position: center;
-  text-align: center;
-  padding-top: 3px;
-  font-style:bold
+  padding-top: -25px;
+  font-style: bold;
+  margin-left: 60px;
 }
 
 label {
@@ -129,7 +126,7 @@ label {
   display: inline-block;
   padding:0px 0px 2px 2px;
   margin-top: 20px;
-  font-size:18px;
+  font-size: 18px;
 }
 
 .radius-field{
@@ -144,8 +141,8 @@ label {
 }
 
 .location-image{
-  padding-left: 30px;
-  padding-top: 8px;
+  padding-left: 15px;
+  padding-top: 15px;
   position: relative;
 }
 

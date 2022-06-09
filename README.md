@@ -10,31 +10,33 @@
 
 # Our Team Charter...
 What do we expect from each other?
-- Support, patience, trust, openess, a positive environment, communication & to feel comfortable sharing issues
+- Support, patience, trust, openess, a positive environment,\
+communication & to feel comfortable sharing issues.
 
 How will you ensure a safe learning environment?
-- Regular stand ups, retros & lunch-time check-ins
+- Regular stand ups, retros & lunch-time check-ins.
 
 How do you go about learning a new tool?
-- Research, consolidating research, stack overflow/google/youtube
+- Research, consolidating research,\
+ using React docs/stack overflow/google/youtube etc.
 
 What is your time commitment?
-- 9:45 to 6 with 1 hour lunch breaks 1 to 2.
+- 9:45 to 6 with 1 hour lunch breaks 1 to 2. Evenings optional.
 
 How will you hold yourselves accountable to your charter?
-- Have it open during our retros/stand-ups
+- Have it open during our retros/stand-ups.
 
 How will you track and report progress?
-- Use a Trello board
+- Use a Trello board.
 
 How will you ensure knowledge sharing?
-- Making a Wiki, sharing at meetings and pinning messages in the team Slack chat
+- Making a Wiki, sharing at meetings and pinning messages in the team Slack chat.
 
 What did your teams do well during previous group projects?
-- Made sure of regular meetings
+- Made sure of regular meetings.
 
 What could have gone better?
-- Better communication
+- Better communication.
 
 Must-Haves
 - Personal objectives
@@ -61,6 +63,7 @@ that could search for local plant & birds by pulling the relevant API data.
 - [Nodemon](https://nodemon.io/) to reload the server automatically.
 - [Jest](https://jestjs.io/) for testing.
 - [Cypress](https://www.cypress.io/) for end-to-end testing.
+- [ESLint](https://eslint.org) for linting.
 - [Heroku](https://www.heroku.com/what) for hosting for deployment.
 - [Trello](https://trello.com) for agile team working development.
 - [Excalidraw](https://excalidraw.com) for domain modelling.
@@ -127,6 +130,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+--------
 
 # `Images from our deployed and working app`
 

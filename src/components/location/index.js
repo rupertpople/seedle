@@ -91,7 +91,7 @@ const speciesDetails = plantsandbirds? (
           onChange={handleRadius}
         />
         <div className="km">
-          <p>Km</p>
+          <p>km</p>
         </div>
           </div>
         <div className="search-components">
@@ -99,7 +99,7 @@ const speciesDetails = plantsandbirds? (
           Search
         </button>
         <button onClick={handleSubmitGeolocation} className="myLocation-form" type="submit">
-          <img src="yourlocation.png" width="30" className="location-image"></img>
+          <img src="yourlocation.png" width="20" className="location-image"></img>
         </button>
         </div>
         <div className="message">{message ? <p>{message}</p> : null}</div>

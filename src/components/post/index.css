@@ -9,8 +9,8 @@
           transform-style: preserve-3d;
 	-webkit-perspective: 1000px;
 	        perspective: 1000px;
-          height: 300px;
-          width: 580px;
+          height: 280px;
+          width: 500px;
           padding-bottom: 5px;
 }
 
@@ -28,8 +28,8 @@
 	-webkit-backface-visibility: hidden;
 	        backface-visibility: hidden;
   text-align: center;
-	height: 300px;
-  width: 580px;
+	height: 280px;
+  width: 500px;
 	color: #fff;
 	font-size: 1rem;
 }
@@ -170,6 +170,10 @@
 
 .count {
 	text-align: center;
+  font-style: bold;
+  font-family: 'Montserrat';
+  font-size:20px;
+  font-weight: bold;
 }
 
 .back .inner button {
@@ -195,4 +199,9 @@
 
 .back .inner {
   text-align: justify;
+}
+
+.wrapper{
+  padding-left: 40px;
+  padding-right: 40px;
 }

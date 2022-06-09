@@ -53,8 +53,9 @@ h3 {
 }
 
 input {
+  display: inline-block;
   border: 0px none;
-  width: 94%;
+  width: 40%;
   border-radius: 4px;
   height: 25px;
   margin-top: 10px;
@@ -64,7 +65,7 @@ input {
   color:#222;
 }
 
-button {
+.form-field {
   width:100%;
   background-color:rgba(74,129,51,0.4);
   border:2px solid #6FC149;
@@ -97,16 +98,12 @@ button {
 
 .form-field {
   cursor: pointer; /* Mouse pointer on hover */
+  width: 80%;
 }
 
 .form-field:hover {
   background-color: rgba(8, 144, 22, 0.565);
 }
-
-.myLocation-form:hover {
-  background-color: rgba(8, 144, 22, 0.565);
-}
-
 
 .postlistComponent {
   width: 1150px;
@@ -125,4 +122,82 @@ button {
   text-align: center;
   padding-top: 3px;
   font-style:bold
+}
+
+label {
+  width: 100%;
+  display: inline-block;
+  padding:0px 0px 2px 2px;
+  margin-top: 20px;
+  font-size:18px;
+}
+
+.radius-field{
+  width: 4%;
+}
+
+.myLocation-form{
+  cursor: pointer;
+  background: none;
+	border: none;
+  position: absolute
+}
+
+.location-image{
+  padding-left: 30px;
+  padding-top: 8px;
+  position: relative;
+}
+
+.search-components{
+  margin: auto;
+  padding-top:20px;
+  position: relative;
+}
+
+.area-search{
+  margin: auto;
+  margin-bottom:15px;
+  position: relative;
+}
+
+.area-size-text{
+  text-align: left;
+  margin-top: 35px;
+  margin-left: 120px;
+  position: absolute;
+  font-size: 20px;
+}
+
+.radius-field{
+  margin-left: 226px;
+  margin-top: 30px
+}
+
+.postcode-search{
+  margin: auto;
+  margin-top: 10px;
+  position: relative;
+}
+
+.postcode-field{
+  margin-left: 226px;
+  width: 30%;
+  margin-top: 22px
+}
+
+.postcode-text{
+  margin: auto;
+  text-align: left;
+  margin-top: 28px;
+  margin-left: 120px;
+  position: absolute;
+  font-size: 20px;
+}
+
+.km{
+  position: "absolute";
+  margin-left: 283px;
+  margin-top: -42px;
+  font-size: 16px;
 }

@@ -3,7 +3,7 @@ body {
 }
 
 .location {
-  width:550px;
+  width:500px;
   height:340px;
   margin: auto;
   display:block;
@@ -66,7 +66,7 @@ input {
 }
 
 .form-field {
-  width:100%;
+  width:0%;
   background-color:rgba(74,129,51,0.4);
   border:2px solid #6FC149;
   color:#fff;
@@ -77,6 +77,7 @@ input {
   cursor:pointer;
   transition:all 0.3s;
   margin-top: 10px;
+  font-weight: bold;
 }
 
 .path-moving,
@@ -98,7 +99,7 @@ input {
 
 .form-field {
   cursor: pointer; /* Mouse pointer on hover */
-  width: 80%;
+  width: 70%;
 }
 
 .form-field:hover {
@@ -140,19 +141,22 @@ label {
   cursor: pointer;
   background: none;
 	border: none;
-  position: absolute
+  position: absolute;
 }
 
 .location-image{
-  padding-left: 30px;
-  padding-top: 8px;
-  position: relative;
+  padding-right: 300px;
+  padding-left: -300px;
+  padding-top: 20px;
+  top: 100px;
+  position: sticky;
 }
 
 .search-components{
   margin: auto;
   padding-top:20px;
   position: relative;
+  padding-left: 120px;
 }
 
 .area-search{
@@ -167,6 +171,7 @@ label {
   margin-left: 120px;
   position: absolute;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .radius-field{
@@ -176,7 +181,7 @@ label {
 
 .postcode-search{
   margin: auto;
-  margin-top: 10px
+  margin-top: 10px;
   position: relative;
 }
 
@@ -193,6 +198,7 @@ label {
   margin-left: 120px;
   position: absolute;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .km{

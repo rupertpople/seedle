@@ -102,7 +102,9 @@ const speciesDetails = plantsandbirds? (
           <img src="yourlocation.png" width="23" className="location-image"></img>
         </button>
         </div>
-        <div className="message">{message ? <p>{message}</p> : null}</div>
+        <div className="message-container">
+          <div className="message">{message ? <p>{message}</p> : null}</div>
+        </div>
       </form>
       {speciesDetails}
       <div className="footer">

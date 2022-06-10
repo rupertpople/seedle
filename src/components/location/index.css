@@ -21,6 +21,10 @@ body {
   border-radius: 10px;
 }
 
+.message-container{
+  text-align:center;
+}
+
 h3 {
   text-align:center; 
   color: #fff;
@@ -118,7 +122,6 @@ input {
   margin: auto;
   padding-top: -25px;
   font-style: bold;
-  margin-left: 60px;
 }
 
 label {
@@ -180,7 +183,7 @@ label {
 .postcode-field{
   margin-left: 226px;
   width: 30%;
-  margin-top: 22px
+  margin-top: 24px
 }
 
 .postcode-text{
@@ -195,6 +198,6 @@ label {
 .km{
   position: "absolute";
   margin-left: 283px;
-  margin-top: -42px;
+  margin-top: -40px;
   font-size: 16px;
 }
